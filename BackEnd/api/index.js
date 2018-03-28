@@ -10,7 +10,9 @@ mongoose.connect('mongodb://localhost:27017/doanki3');
 var AccountAPI = require('./account.api');
 var ProductAPI = require('./product.api');
 var RoleAPI = require('./role.api');
-var UserAPI= require('./user.api')
+var UserAPI= require('./user.api');
+var ShopAPI=require('./shop.api');
+var OrderAPI=require('./order.api');
 
 //Router for account
 router.get('/account/findAll', AccountAPI.findAll);
@@ -44,6 +46,19 @@ router.delete('/user/delete/:id', UserAPI.delete);
 router.put('/user/update/:id', UserAPI.update);
 router.get('/user/search/:keyword', UserAPI.search);
 
+//Router for Shop
+router.get('/shop/findAll', ShopAPI.findAll);
+router.get('/shop/find/:id', ShopAPI.find);
+router.post('/shop/create', ShopAPI.create);
+router.delete('/shop/delete/:id', ShopAPI.delete);
+router.put('/shop/update/:id', ShopAPI.update);
+router.get('/shop/search/:keyword', ShopAPI.search);
 
+//Router for Order 
+router.get('/order/findAll', OrderAPI.findAll);
+router.get('/order/find/:id', OrderAPI.find);
+router.post('/order/create', OrderAPI.create);
+router.delete('/order/delete/:id', OrderAPI.delete);
+router.put('/order/update/:id', OrderAPI.update);
 
 module.exports = router;
