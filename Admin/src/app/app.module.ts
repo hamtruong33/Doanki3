@@ -14,6 +14,7 @@ import {HomeComponent} from './component/home/home.component';
 import {AboutUsComponent} from './component/aboutus/aboutus.component';
 import {NewsComponent} from './component/news/news.component';
 import {TemplateComponent} from './template.component';
+import {LoginComponent} from './component/account/login/login.component';
 
 import {routing} from './app.routing';
 
@@ -27,7 +28,8 @@ import {routing} from './app.routing';
     HomeComponent,
     AboutUsComponent,
     NewsComponent,
-    TemplateComponent
+    TemplateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

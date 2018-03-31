@@ -31,10 +31,10 @@ export class AccountComponent implements OnInit {
             console.log('Account Info');
             console.log('Username :'+account.username);
             console.log('Password :'+account.password);
-            console.log('Description :'+account.description);
+            //console.log('Description :'+account.description);
             console.log('Status: '+account.status);
-            console.log('Gender: '+account.gender);
-            console.log('Role: '+account.role);
+           // console.log('Gender: '+account.gender);
+            //console.log('Role: '+account.role);
         }
        
 
