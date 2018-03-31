@@ -1,0 +1,14 @@
+<input type="button" value="Click Me" (click)= "clickMe()">
+<br>
+<input type="text" (keyup.enter)="display($event)">
+<br>
+{{result1}}
+<br>
+Category <select (change)="selectCategory($event)">
+    <option value="c1">Category 1</option>
+    <option value="c2">Category 2</option>
+    <option value="c3">Category 3</option>
+    <option value="c4">Category 4</option>
+</select>
+<br>
+{{result2}}

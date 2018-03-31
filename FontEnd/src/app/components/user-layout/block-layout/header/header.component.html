@@ -1,0 +1,999 @@
+<!-- Header -->
+
+<header id="header" class=" variant">    
+  <!-- Header Top -->
+  <div class="header-top">
+      <div class="container">
+          <div class="row">
+              <div class="header-top-left form-inline col-lg-4 col-md-5 hidden-sm hidden-xs ">
+                  <div class="form-group navbar-welcome hidden-xs">
+                      <div class="welcome-msg"> 
+                          <ul class="list-msg owl2-carousel owl2-theme owl2-loaded">   
+                              <div class="owl2-stage-outer">
+                                  <div class="owl2-stage" style="transform: translate3d(-7290px, 0px, 0px); transition: 0.8s; width: 14580px;">
+                                      <div class="owl2-item cloned" style="width: 2400px; margin-right: 30px;">
+                                          <li><label class="label-msg">This week</label> <a href="#">Sale special too good to miss in every gear category</a></li>
+                                      </div>
+                                      <div class="owl2-item cloned" style="width: 2400px; margin-right: 30px;">
+                                          <li><label class="label-msg">Tomorrow</label> <a href="#">Laten ipsum dolor sit amet. In gravida pellentesque</a></li>
+                                      </div>
+                                      <div class="owl2-item" style="width: 2400px; margin-right: 30px;">
+                                          <li><label class="label-msg">This week</label> <a href="#">Sale special too good to miss in every gear category</a></li>
+                                      </div>
+                                      <div class="owl2-item active" style="width: 2400px; margin-right: 30px;">
+                                          <li><label class="label-msg">Tomorrow</label> <a href="#">Laten ipsum dolor sit amet. In gravida pellentesque</a></li>
+                                      </div>
+                                      <div class="owl2-item cloned" style="width: 2400px; margin-right: 30px;">
+                                          <li><label class="label-msg">This week</label> <a href="#">Sale special too good to miss in every gear category</a></li>
+                                      </div>
+                                      <div class="owl2-item cloned" style="width: 2400px; margin-right: 30px;">
+                                          <li><label class="label-msg">Tomorrow</label> <a href="#">Laten ipsum dolor sit amet. In gravida pellentesque</a></li>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="owl2-controls">
+                                  <div class="owl2-nav">
+                                      <div class="owl2-prev" style="display: none;">prev</div>
+                                      <div class="owl2-next" style="display: none;">next</div>
+                                  </div>
+                                  <div class="owl2-dots" >
+                                      <div class="owl2-dot">
+                                          <span></span>
+                                      </div>
+                                      <div class="owl2-dot active">
+                                          <span></span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </ul> 
+                      </div>						
+                  </div>
+              </div>
+
+              <div class="header-top-right collapsed-block col-lg-8 col-md-7 col-xs-12 ">
+                  <h5 class="tabBlockTitle visible-sm visible-xs">More<a class="expander " href="#TabBlock-1"><i class="fa fa-angle-down"></i></a></h5>
+                  <div class="tabBlock" id="TabBlock-1">
+                      <ul class="top-link list-inline">
+                          <li class="account" id="my_account">
+                              <a href="account" title="My Account" class="btn btn-xs dropdown-toggle" data-toggle="dropdown"> 
+                                  <span>My Account</span> 
+                                  <span class="fa fa-angle-down"></span>
+                              </a>
+                              <ul class="dropdown-menu ">
+                                  <li>
+                                      <a href="register"><i class="fa fa-user"></i> Register</a>
+                                  </li>
+                                  <li>
+                                      <a href="login"><i class="fa fa-pencil-square-o"></i> Login</a>
+                                  </li>
+                              </ul>
+                          </li>
+                      
+                          <li class="checkout">
+                              <a href="checkout" class="top-link-checkout" title="Checkout">
+                                  <span>Checkout</span>
+                              </a>
+                          </li>							
+                          <!-- <li class="login">
+                                  <a href="checkout/cart" title="Shopping Cart">
+                                      <span class="hidden-xs hidden-sm hidden-md">Shopping Cart</span>
+                                  </a>
+                          </li> -->
+                      </ul>
+                      <div class="form-group currencies-block">
+                          <form action="currency" method="post" enctype="multipart/form-data" id="currency">
+                              <a class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                                  <span class="icon icon-credit "></span>
+                                      USD        
+                                  <span class="fa fa-angle-down"></span>
+                              </a>
+                              <ul class="dropdown-menu btn-xs">
+                                  <li>
+                                      <a title="Euro" onclick="$('input[name=\'code\']').attr('value', 'EUR'); $('#currency').submit();">(€) &nbsp;Euro</a>
+                                  </li>
+                                  <li>
+                                      <a title="USD" onclick="$('input[name=\'code\']').attr('value', 'USD'); $('#currency').submit();">($) &nbsp;USD</a>
+                                  </li>
+                                  <li>
+                                      <a title="VNĐ" onclick="$('input[name=\'code\']').attr('value', 'VND'); $('#currency').submit();">(VNĐ) &nbsp;VNĐ</a>
+                                  </li>
+                              </ul>
+                              <input type="hidden" name="code" value="">
+                              <input type="hidden" name="redirect" value="redirect">
+                          </form>
+                      </div>
+                      <div class="form-group languages-block ">
+                          <form action="language" method="post" enctype="multipart/form-data" id="bt-language">
+                              <a class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                                  <img src="/assets/catalog/language/en-gb/en-gb.png" alt="English" title="English"> 
+                                  <span class="hidden-xs">English</span> 
+                                  <span class="fa fa-angle-down"></span>
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li> 
+                                      <a onclick="$('input[name=\'code\']').attr('value', 'en-gb'); $('#bt-language').submit();">
+                                          <img src="/assets/catalog/language/en-gb/en-gb.png" alt="English" title="English"> 
+                                          English</a>
+                                  </li>
+                                  <li> 
+                                      <a onclick="$('input[name=\'code\']').attr('value', 'ar'); $('#bt-language').submit();">
+                                          <img src="/assets/catalog/language/ar/ar.png" alt="Arabic" title="Arabic"> 
+                                          Arabic</a>
+                                  </li>
+                              </ul>                                
+                              <input type="hidden" name="code" value="">
+                              <input type="hidden" name="redirect" value="index9328.html?route=common/home">
+                          </form>
+                      </div>
+                  </div>                    
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End Header Top -->
+
+  <!-- Header Center -->
+  <div class="header-center">
+      <div class="container">
+          <div class="row">
+              <!-- Search -->
+              <div class="col-sm-4 header_search">
+                  <div id="sosearchpro" class="sosearchpro-wrapper so-search compact-hidden">
+                      <form method="GET" action="index">
+                          <div id="search1" class="search input-group">
+                              <div class="select_category filter_type  icon-select">
+                                  <select class="no-border" name="category_id">
+                                      <option value="0">All Category</option>
+                                      <option value="20">Desktops</option>
+                                      <option value="26">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home 9</option>  
+                                      <option value="27">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home 8</option>
+                                      <option value="18">Laptops &amp; Notebooks</option>
+                                      <option value="46">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Macs</option>
+                                      <option value="45">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows</option>
+                                      <option value="25">Automotive</option>
+                                      <option value="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gadgets &amp; Auto Parts</option>
+                                      <option value="36">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More Car Accessories</option>
+                                      <option value="29">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Car Alarms and Security</option>
+                                      <option value="28">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Car Audio &amp; Speakers</option>
+                                      <option value="30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printers</option>
+                                      <option value="31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scanners</option>
+                                      <option value="32">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Cameras</option>
+                                      <option value="57">Mobile &amp; Tablet </option>
+                                      <option value="68">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hanet magente</option>
+                                      <option value="69">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Knage unget</option>
+                                      <option value="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Latenge mange</option>
+                                      <option value="67">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Punge nenune</option>
+                                      <option value="71">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qunge genga</option>
+                                      <option value="65">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tange manue</option>
+                                      <option value="17">Electronics </option>
+                                      <option value="64">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Angene mafin</option>
+                                      <option value="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Egante mangetes</option>
+                                      <option value="62">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gante extensg</option>
+                                      <option value="61">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guntes magesg</option>
+                                      <option value="66">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rengae manges</option>
+                                      <option value="63">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sine engain</option>
+                                      <option value="33">Apparel</option>
+                                      <option value="76">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessories</option>
+                                      <option value="80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bags</option>
+                                      <option value="74">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computers</option>
+                                      <option value="72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Electronics</option>
+                                      <option value="79">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fashion</option>
+                                      <option value="77">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Men</option>
+                                      <option value="73">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobiles</option>
+                                      <option value="75">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sports</option>
+                                      <option value="81">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Watches</option>
+                                      <option value="78">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Women</option>
+                                      <option value="34">Computer</option>
+                                      <option value="43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camping &amp; Hiking</option>
+                                      <option value="47">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cusen mariot</option>
+                                      <option value="48">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Denta magela</option>
+                                      <option value="55">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Engite nanet</option>
+                                      <option value="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Theid cupensg</option>
+                                      <option value="59">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Verture agoent</option>
+                                  </select>
+                              </div>                                    
+                              <input class="autosearch-input form-control" type="text" value="" size="50" autocomplete="off" placeholder="Search" name="search">
+                              <ul class="dropdown-menu"></ul>
+                              <span class="input-group-btn">
+                                  <button type="submit" class="button-search btn btn-default btn-lg" name="submit_search"><i class="fa fa-search"></i></button>
+                              </span>
+                          </div>
+                          <input type="hidden" name="route" value="product/search">
+                      </form>
+                  </div>
+
+
+                  <script type="text/javascript">
+                  // Autocomplete */
+                  (function($) {
+                  $.fn.Soautocomplete = function(option) {
+                      return this.each(function() {
+                          this.timer = null;
+                          this.items = new Array();
+
+                          $.extend(this, option);
+
+                          $(this).attr('autocomplete', 'off');
+                          
+                          // Focus
+                          $(this).on('focus', function() {
+                              this.request();
+                          });
+                          
+                          // Blur
+                          $(this).on('blur', function() {
+                              setTimeout(function(object) {
+                                  (typeof object !== 'undefined') ? object.hide() : '';
+                              }, 200, this);				
+                          });
+                          
+                          // Keydown
+                          $(this).on('keydown', function(event) {
+                              switch(event.keyCode) {
+                                  case 27: // escape
+                                      this.hide();
+                                      break;
+                                  default:
+                                      this.request();
+                                      break;
+                              }				
+                          });
+                          
+                          // Click
+                          this.click = function(event) {
+                              event.preventDefault();
+
+                              value = $(event.target).parent().attr('data-value');
+
+                              if (value && this.items[value]) {
+                                  this.select(this.items[value]);
+                              }
+                          }
+                          
+                          // Show
+                          this.show = function() {
+                              var pos = $(this).position();
+
+                              $(this).siblings('ul.dropdown-menu').css({
+                                  top: pos.top + $(this).outerHeight(),
+                                  left: pos.left
+                              });
+
+                              $(this).siblings('ul.dropdown-menu').show();
+                          }
+                          
+                          // Hide
+                          this.hide = function() {
+                              $(this).siblings('ul.dropdown-menu').hide();
+                          }		
+                          
+                          // Request
+                          this.request = function() {
+                              clearTimeout(this.timer);
+                              
+                              this.timer = setTimeout(function(object) {
+                                  (typeof object !== 'undefined') ? object.source($(object).val(), $.proxy(object.response, object)) : '';
+                              }, 200, this);
+                          }
+                          
+                          // Response
+                          this.response = function(json) {
+                              html = '';
+
+                              if (json.length) {
+                                  for (i = 0; i < json.length; i++) {
+                                      this.items[json[i]['value']] = json[i];
+                                  }
+
+                                  for (i = 0; i < json.length; i++) {
+                                      if (!json[i]['category']) {
+                                      html += '<li class="media" data-value="' + json[i]['value'] + '">';
+                                      if(json[i]['image'] && json[i]['show_image'] && json[i]['show_image'] == 1 ) {
+                                          html += '	<a class="media-left pull-left" href="' + json[i]['link'] + '"><img class="pull-left" src="' + json[i]['image'] + '"></a>';	
+                                      }
+                                      
+                                      html += '<div class="media-body">';	
+                                      html += '<a href="' + json[i]['link'] + '"><span>' + json[i]['label'] + '</span></a>';
+                                      if(json[i]['price'] && json[i]['show_price'] && json[i]['show_price'] == 1){
+                                          html += '	<div class="price">';
+                                          if (!json[i]['special']) {
+                                              html += '<span class="price">Price : '+json[i]['price']+'</span>';;
+                                          } else {
+                                              html += '<span class="price-old">' + json[i]['price'] + '</span><span class="price-new">' + json[i]['special'] + '</span>';
+                                          }
+                                          if (json[i]['tax']) {
+                                              html += '<br />';
+                                              html += '<span class="price-tax">Tax : ' + json[i]['tax'] + '</span>';
+                                          }
+                                          html += '	</div>';
+                                      }
+
+                                      if(json[i]['show_addtocart'] || json[i]['show_addtowishlist'] || json[i]['show_addtocompare'] ){
+                                          html += '<div class="button-group">';
+                                          if(json[i]['show_addtocart'])
+                                              html += '<button type="button" onclick="cart.add(' + json[i]['value'] + ',' + json[i]['minimum'] + ');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span> <i class="fa fa-shopping-cart"></i></button>';
+                                          if(json[i]['show_addtowishlist'])
+                                              html += '<button type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add(' + json[i]['value'] + ');"><i class="fa fa-heart"></i></button>';
+                                          if(json[i]['show_addtocompare'])
+                                              html += '<button type="button" data-toggle="tooltip" title="Add to Compare" onclick="compare.add(' + json[i]['value'] + ');"><i class="fa fa-exchange"></i></button>';
+                                          html += '</div>';
+                                      }
+                                      html += '</div></li>';
+                                      html += '<li class="clearfix"></li>';
+                                      }
+                                  }
+
+                                  // Get all the ones with a categories
+                                  var category = new Array();
+
+                                  for (i = 0; i < json.length; i++) {
+                                      if (json[i]['category']) {
+                                          if (!category[json[i]['category']]) {
+                                              category[json[i]['category']] = new Array();
+                                              category[json[i]['category']]['name'] = json[i]['category'];
+                                              category[json[i]['category']]['item'] = new Array();
+                                          }
+
+                                          category[json[i]['category']]['item'].push(json[i]);
+                                      }
+                                  }
+
+                                  for (i in category) {
+                                      html += '<li class="dropdown-header">' + category[i]['name'] + '</li>';
+
+                                      for (j = 0; j < category[i]['item'].length; j++) {
+                                          html += '<li data-value="' + category[i]['item'][j]['value'] + '"><a href="#">&nbsp;&nbsp;&nbsp;' + category[i]['item'][j]['label'] + '</a></li>';
+                                      }
+                                  }
+                              }
+
+                              if (html) {
+                                  this.show();
+                              } else {
+                                  this.hide();
+                              }
+
+                              $(this).siblings('ul.dropdown-menu').html(html);
+                          }
+                          
+                          $(this).after('<ul class="dropdown-menu"></ul>');
+                          
+                      });
+                  }
+                  })(window.jQuery);
+
+                  $(document).ready(function() {
+                  var selector = '#search1';
+                  var total = 0;
+                  var showimage = 1;
+                  var showprice = 1;
+                  var character = 3;
+                  var height = 100;
+                  var width = 100;
+                  $(selector).find('input[name=\'search\']').Soautocomplete({
+                      delay: 500,
+                      source: function(request, response) {
+                          var category_id = $(".select_category select[name=\"category_id\"]").first().val();
+                          if(typeof(category_id) == 'undefined')
+                              category_id = 0;
+                          var limit = 5;
+                          if(request.length >= character){
+                              $.ajax({
+                                  url: 'index.php?route=module/so_searchpro/autocomplete&filter_category_id='+category_id+'&limit='+limit+'&width='+width+'&height='+height+'&filter_name='+encodeURIComponent(request),
+                                  dataType: 'json',
+                                  success: function(json) {		
+                                      response($.map(json, function(item) {
+                                          total = 0;
+                                          if(item.total){
+                                              total = item.total;
+                                          }
+                                          
+                                          return {
+                                              price:   item.price,
+                                              special: item.special,
+                                              tax:     item.tax,
+                                              label:   item.name,
+                                              image:   item.image,
+                                              link:    item.link,
+                                              minimum:    item.minimum,
+                                              show_price:  showprice,
+                                              show_image:  showimage,	
+                                              value:   item.product_id,
+                                          }
+                                      }));
+                                  }
+                              });
+                          }	
+                      },
+                  });
+                  });
+                  </script>
+
+              </div>
+              <!-- end search -->
+
+              <!-- Logo -->
+              <div class="navbar-logo col-sm-4 col-xs-12 text-center">
+                  <a href="index.html">
+                      <img src="assets/image/catalog/theme_logo.png" title="SO Maxshop - Layout 3" alt="SO Maxshop - Layout 3">
+                  </a>
+              </div>
+              <!--end header logo center-->                
+  
+              <!-- Secondary Hotline menu -->
+              <div class="header-center-right col-sm-4">                                    
+                  <div class="phone-contact hidden-xs"><div class="inner-info"><h2>Hotline:</h2><p>(801) 2345 - 6789</p></div></div>				    
+              </div>
+              <!--end header lotline center-->
+          </div>               
+      </div>
+  </div>
+  <!-- end Header Center -->
+  
+  <!-- Header Bottom -->
+  <div class="header-bottom">
+      <div class="container">
+          <div class="row">
+              <!-- Navbar menu -->
+              <div class="header-bottom-menu col-md-10 col-sm-9 col-xs-4">                    
+                  <div class="responsive so-megamenu">
+                      <nav class="navbar-default">
+                          <div class=" container-megamenu  horizontal">
+                              <div class="navbar-header">
+                                  <button type="button" id="show-megamenu" data-toggle="collapse" class="navbar-toggle">
+                                      <span class="icon-bar"></span>
+                                      <span class="icon-bar"></span>
+                                      <span class="icon-bar"></span>
+                                  </button>
+                              </div>   
+
+                              <div class="megamenu-wrapper">
+                                  <span id="remove-megamenu" class="fa fa-times"></span>
+                                  <div class="megamenu-pattern">
+                                      <div class="container">
+                                          <ul class="megamenu">
+                                              <li class="home">
+                                                  <a href="/">
+                                                      <span><strong>Home</strong></span>
+                                                  </a>
+                                              </li>                                                            
+                                              <li class="full-width with-sub-menu hover">
+                                                  <p class="close-menu"></p>
+                                                  <a href="contact" class="clearfix">
+                                                      <strong>
+                                                          Layouts
+                                                      </strong> 
+                                                      <b class="caret"></b> 
+                                                  </a>
+                                                  <div class="sub-menu" style="width: 100%; display: none; right: 0px;">
+                                                      <div class="content" style="display: none;">
+                                                          <div class="row">
+                                                              <div class="col-sm-12">
+                                                                  <div class="html ">
+                                                                      <div class="row">
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;">
+                                                                              <a href="index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout1.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 1
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;">
+                                                                              <a href="../layout2/index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout2.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 2
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout3.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 3
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="../layout4/index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout4.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 4
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="../layout5/index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout5.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 5
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="../layout6/index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout6.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 6
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="../layout7/index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout7.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 7
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="../layout8/index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout8.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 8
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="../layout9/index.html" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/layout9.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Layout 9
+                                                                              </a>
+                                                                          </div>
+                                                                          <div class="col-md-3 col-sm-12" style="text-align: center; margin-bottom: 20px;min-height: 140px;">
+                                                                              <a href="../index30f3.html?layoutbox=boxed" title="" style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;">
+                                                                                  <img src="assets/image/catalog/menu/boxed.png" alt="layout" style="margin: 0 0 10px; border: 1px solid #ddd;display: inline-block">
+                                                                                  Home page - Boxed
+                                                                              </a>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li class="full-width with-sub-menu hover">
+                                                  <p class="close-menu"></p>
+                                                  <a href="#" class="clearfix">
+                                                      <strong>
+                                                          Features
+                                                      </strong> 
+                                                      <b class="caret"></b> 
+                                                  </a>
+                                                  <div class="sub-menu" style="width: 100%; display: none; right: 0px;">
+                                                      <div class="content" style="display: none;">
+                                                          <div class="row">
+                                                              <div class="col-sm-4">
+                                                                  <div class="html ">
+                                                                      <div class="column layout-color"> 
+                                                                          <a>Theme Colors</a>
+                                                                          <div>	
+                                                                              <ul class="row-list" style="font-size: 14px;">
+                                                                                  <li class="color orange"><a href="index9ae1.html?scheme=orange">Orange Color</a></li>
+                                                                                  <li class="color green"><a href="index50df.html?scheme=green">Green Color</a></li>
+                                                                                  <li class="color boocdo"><a href="index75e8.html?scheme=red">Red Color</a></li>
+                                                                                  <li class="color blue"><a href="index17ae.html?scheme=blue">Blue Color</a></li>
+                                                                                  <li class="color cyan"><a href="index01ac.html?scheme=cyan">Cyan Color</a></li>
+                                                                              </ul>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="col-sm-4">
+                                                                  <div class="html ">
+                                                                      <div class="column">		
+                                                                          <a>product Listing</a>		
+                                                                          <div>				
+                                                                              <ul class="row-list" style="font-size: 14px;">
+                                                                                  <li><a href=""><img src="assets/image/catalog/menu/left.png" alt="img">&nbsp;&nbsp;Left column</a></li>
+                                                                                  <li><a href=""><img src="assets/image/catalog/menu/right.png" alt="img">&nbsp;&nbsp;Right column</a></li>
+                                                                                  <li><a href=""><img src="assets/image/catalog/menu/left-right.png" alt="img">&nbsp;&nbsp;Left right columns</a></li>
+                                                                                  <li><a href=""><img src="assets/image/catalog/menu/without.png" alt="img">&nbsp;&nbsp;Without columns</a></li>
+                                                                                  <li><a href=""><img src="assets/image/catalog/menu/masony.png" alt="img">&nbsp;&nbsp;Gallery content</a></li>
+                                                                              </ul>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="col-sm-4">
+                                                                  <div class="html ">
+                                                                      <div class="column">		
+                                                                          <a>product Detail</a>		
+                                                                              <div>				
+                                                                                  <ul class="row-list" style="font-size: 14px;">
+                                                                                      <li><a href=""><img src="assets/image/catalog/menu/left.png" alt="img">&nbsp;&nbsp;Left column</a></li>
+                                                                                      <li><a href=""><img src="assets/image/catalog/menu/right.png" alt="img">&nbsp;&nbsp;Right column</a></li>
+                                                                                      <li><a href=""><img src="assets/image/catalog/menu/left-right.png" alt="img">&nbsp;&nbsp;Left right columns</a></li>
+                                                                                      <li><a href=""><img src="assets/image/catalog/menu/without.png" alt="img">&nbsp;&nbsp;Without columns</a></li>
+                                                                                  </ul>
+                                                                              </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li class="item-style1 with-sub-menu hover">
+                                                  <p class="close-menu"></p>
+                                                  <a href="#" class="clearfix">
+                                                      <strong>
+                                                          <img src="assets/image/catalog/menu/hot-icon.png" alt="">Electronic
+                                                      </strong>
+                                                      <b class="caret"></b> 
+                                                  </a>
+                                                  <div class="sub-menu" style="width: 70%; display: none;">
+                                                      <div class="content" style="display: none;">
+                                                          <div class="row">
+                                                              <div class="col-sm-4">
+                                                                  <a href="" class="title-submenu ">Mobile &amp; Tablet </a>
+                                                                  <div class="row">
+                                                                      <div class="col-sm-12 hover-menu">
+                                                                          <div class="menu">
+                                                                              <ul>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index4346.html?route=product/category&amp;path=57_68';" class="main-menu">Hanet magente</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index2b5f.html?route=product/category&amp;path=57_69';" class="main-menu">Knage unget</a>
+                                                                                  </li>
+                                                                                  <li><a href="" onclick="window.location = 'indexec11.html?route=product/category&amp;path=57_70';" class="main-menu">Latenge mange</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'indexb121.html?route=product/category&amp;path=57_67';" class="main-menu">Punge nenune</a>
+                                                                                  </li>
+                                                                              </ul>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="col-sm-4">
+                                                                  <a href="" class="title-submenu ">Computer</a>
+                                                                  <div class="row">
+                                                                      <div class="col-sm-12 hover-menu">
+                                                                          <div class="menu">
+                                                                              <ul>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index22d5.html?route=product/category&amp;path=34_43';" class="main-menu">Camping &amp; Hiking</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index509a.html?route=product/category&amp;path=34_47';" class="main-menu">Cusen mariot</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index7e21.html?route=product/category&amp;path=34_48';" class="main-menu">Denta magela</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index000c.html?route=product/category&amp;path=34_55';" class="main-menu">Engite nanet</a>
+                                                                                  </li>
+                                                                              </ul>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="col-sm-4">
+                                                                  <a href="" class="title-submenu sub3">Electronics </a>
+                                                                  <div class="row">
+                                                                      <div class="col-sm-12 hover-menu">
+                                                                          <div class="menu">
+                                                                              <ul>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'indexbf24.html?route=product/category&amp;path=17_64';" class="main-menu">Angene mafin</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index40ab.html?route=product/category&amp;path=17_60';" class="main-menu">Egante mangetes</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'indexd711.html?route=product/category&amp;path=17_62';" class="main-menu">Gante extensg</a>
+                                                                                  </li>
+                                                                                  <li>
+                                                                                      <a href="" onclick="window.location = 'index9b9e.html?route=product/category&amp;path=17_61';" class="main-menu">Guntes magesg</a>
+                                                                                  </li>
+                                                                              </ul>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="border"></div>
+                                                          <div class="row">
+                                                              <div class="col-sm-12">
+                                                                  <div class="html item-banner">
+                                                                      <div class="col-xs-12 img-bottom">			
+                                                                          <div class="row">
+                                                                              <a href="#"><img src="assets/image/catalog/cms/static-image-h-2.png" alt="banner1"></a> 
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                              <li class="item-style2 full-width with-sub-menu hover">
+                                                  <p class="close-menu"></p>
+                                                  <a href="#" class="clearfix">
+                                                      <strong>
+                                                          <img src="assets/image/catalog/menu/new-icon.png" alt="">Accessories
+                                                      </strong>                        
+                                                      <b class="caret"></b> 
+                                                  </a>
+                                                  <div class="sub-menu" style="width: 100%; display: none;">
+                                                      <div class="content" style="display: none;">
+                                                          <div class="row">
+                                                              <div class="col-sm-8">
+                                                                  <div class="categories ">
+                                                                      <div class="row">
+                                                                          <div class="col-sm-6 static-menu">
+                                                                              <div class="menu">
+                                                                                  <ul>
+                                                                                      <li>
+                                                                                          <a href="" onclick="" class="main-menu">Automotive</a>
+                                                                                          <ul>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Car Alarms and Security</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Car Audio &amp; Speakers</a>
+                                                                                              </li>
+                                                                                              <li><a href="" onclick="">Car Audio &amp; Speakers</a>
+                                                                                              </li>
+                                                                                              <li><a href="" onclick="">Gadgets &amp; Auto Parts</a>
+                                                                                              </li>
+                                                                                          </ul>
+                                                                                      </li>
+                                                                                      <li>
+                                                                                          <a href="" onclick="" class="main-menu">Electronics </a>
+                                                                                          <ul>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Egante mangetes</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Rengae manges</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Angene mafin</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Cusen mariot</a>
+                                                                                              </li>
+                                                                                          </ul>
+                                                                                      </li>
+                                                                                  </ul>
+                                                                              </div>
+                                                                          </div>
+                                                                          <div class="col-sm-6 static-menu">
+                                                                              <div class="menu">
+                                                                                  <ul>
+                                                                                      <li>
+                                                                                          <a href="" onclick="" class="main-menu">Computer</a>
+                                                                                          <ul>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Camping &amp; Hiking</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Cusen mariot</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Denta magela</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Engite nanet</a>
+                                                                                              </li>
+                                                                                          </ul>
+                                                                                      </li>
+                                                                                      <li>
+                                                                                          <a href="" onclick="" class="main-menu">Mobile &amp; Tablet </a>
+                                                                                          <ul>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Hanet magente</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Knage unget</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Latenge mange</a>
+                                                                                              </li>
+                                                                                              <li>
+                                                                                                  <a href="" onclick="">Punge nenune</a>
+                                                                                              </li>
+                                                                                          </ul>
+                                                                                      </li>
+                                                                                  </ul>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="col-sm-4">
+                                                                  <span class="title-submenu">Best sellers</span>
+                                                                  <div class="col-sm-12 best-sellers-menu">
+                                                                      <div class="product-thumb">
+                                                                          <div class="image">
+                                                                              <a href="">
+                                                                                  <img src="assets/image/cache/catalog/product/el5-100x100.jpg" alt="Kenle masen itcute" title="Kenle masen itcute" class="img-responsive">
+                                                                              </a>
+                                                                          </div>
+                                                                          <div>
+                                                                              <div class="caption">
+                                                                                  <h4><a href="">Kenle masen itcute</a></h4>
+                                                                                  <p>
+                                                                                      The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 
+                                                                                      pixel resolution. Designed specifically for the creative professional, 
+                                                                                      this display provides more space for easier access to all the tools and 
+                                                                                      palettes needed to edit, format and composite your work. Combine this 
+                                                                                      display with a Mac Pro, MacBook Pro, or PowerMac G5 and there's no limit
+                                                                                      to what you can achieve.
+
+                                                                                      The Cinema HD features an active-matrix liquid crystal display that 
+                                                                                      produces flicker-free images that deliver twice the brightness, twice 
+                                                                                      the sharpness and twice the contrast ratio of a typical CRT display. 
+                                                                                      Unlike other flat panels, it's designed with a pure digital interface to
+                                                                                      deliver distortion-free images that never need adjusting. With over 4 
+                                                                                      million digital pixels, the display is uniquely suited for scientific 
+                                                                                      and technical applications such as visualizing molecular structures or 
+                                                                                      analyzing geological data.
+
+                                                                                      Offering accurate, brilliant color performance, the Cinema HD delivers 
+                                                                                      up to 16.7 million colors across a wide gamut allowing you to see subtle
+                                                                                      nuances between colors from soft pastels to rich jewel tones. A wide 
+                                                                                      viewing angle ensures uniform color from edge to edge. Apple's ColorSync
+                                                                                      technology allows you to create custom profiles to maintain consistent 
+                                                                                      color onscreen and in print. The result: You can confidently use this 
+                                                                                      display in all your color-critical applications. ..
+                                                                                  </p>
+                                                                                  <p class="price">$700.00</p>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="col-sm-12 best-sellers-menu">
+                                                                      <div class="product-thumb">
+                                                                          <div class="image">
+                                                                              <a href="">
+                                                                                  <img src="assets/image/cache/catalog/product/3-100x100.png" alt="Duidem rerum facilis" title="Duidem rerum facilis" class="img-responsive">
+                                                                              </a>
+                                                                          </div>
+                                                                          <div>
+                                                                              <div class="caption">
+                                                                                  <h4><a href="">Duidem rerum facilis</a></h4>
+                                                                                  <p>
+                                                                                      iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.
+                                                                                      ..
+                                                                                  </p>
+                                                                                  <p class="price">$101.00</p>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="col-sm-12 best-sellers-menu">
+                                                                      <div class="product-thumb">
+                                                                          <div class="image">
+                                                                          <a href="">
+                                                                              <img src="assets/image/cache/catalog/product/38-100x100.jpg" alt="Dail miren tukan potrem" title="Dail miren tukan potrem" class="img-responsive">
+                                                                          </a>
+                                                                          </div>
+                                                                          <div>
+                                                                              <div class="caption">
+                                                                                  <h4><a href="">Dail miren tukan potrem</a></h4>
+                                                                                  <p>
+                                                                                      Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we're not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably 'chunkier'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR's, an important difference when compared to the latter is that the EOS 5D doesn't have any environmental seals. While Canon don't specifically refer to the EOS 5D as a 'professional' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they've not bought too many EF-S lenses...) äë
+                                                                                      ..
+                                                                                  </p>
+                                                                                  <div class="rating">
+                                                                                      <span class="fa fa-stack">
+                                                                                          <i class="fa fa-star fa-stack-2x"></i>
+                                                                                          
+                                                                                      </span>
+                                                                                      <span class="fa fa-stack">
+                                                                                          
+                                                                                          <i class="fa fa-star-o fa-stack-2x"></i>
+                                                                                      </span>
+                                                                                      <span class="fa fa-stack">
+                                                                                          
+                                                                                          <i class="fa fa-star-o fa-stack-2x"></i>
+                                                                                      </span>
+                                                                                      <span class="fa fa-stack">
+                                                                                          
+                                                                                          <i class="fa fa-star-o fa-stack-2x"></i>
+                                                                                      </span>
+                                                                                      <span class="fa fa-stack">
+                                                                                          
+                                                                                          <i class="fa fa-star-o fa-stack-2x"></i>
+                                                                                      </span>
+                                                                                  </div>
+                                                                                  <p class="price">$100.00</p>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </li>                           
+                                              <li class="style-page with-sub-menu hover">
+                                                  <p class="close-menu"></p>
+                                                  <a href="#" class="clearfix">
+                                                      <strong>
+                                                          Pages
+                                                      </strong> 
+                                                      <b class="caret"></b> 
+                                                  </a>
+                                                  <div class="sub-menu" style="width: 230px; display: none;">
+                                                      <div class="content" style="display: none;">
+                                                          <div class="row">
+                                                              <div class="col-sm-6">
+                                                                  <div class="html ">
+                                                                      <ul class="row-list">
+                                                                          <li>
+                                                                              <a class="subcategory_item" href="">FAQ</a>
+                                                                          </li>
+                                                                          <li>
+                                                                              <a class="subcategory_item" href="">Pricing Tables</a>
+                                                                          </li>
+                                                                          <li>
+                                                                              <a class="subcategory_item" href="">Gallery</a>
+                                                                          </li>
+                                                                          <li>
+                                                                              <a class="subcategory_item" href="">Contact us</a>
+                                                                          </li>
+                                                                      </ul>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="col-sm-6">
+                                                                  <div class="html ">
+                                                                      <ul class="row-list">	
+                                                                          <li><a class="subcategory_item" href="">About Us 1</a></li>
+                                                                          <li><a class="subcategory_item" href="">About Us 2</a></li>	
+                                                                          <li><a class="subcategory_item" href="">About Us 3</a></li>	
+                                                                          <li><a class="subcategory_item" href="">About Us 4</a></li>
+                                                                      </ul>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </li>                                        
+                                              <li class="">
+                                                  <p class="close-menu"></p>
+                                                  <a href="" class="clearfix">
+                                                      <strong>
+                                                          Blog
+                                                      </strong> 
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </nav>	
+                  </div>            
+              </div>
+              <!-- //end Navbar -->
+              
+              <!--Cart desktop-->
+              <div class="block-cart col-md-2 col-sm-3 col-xs-8">
+                  <div class="shopping_cart pull-right">                   
+                      <div id="cart" class=" btn-group btn-shopping-cart">
+                          <a data-loading-text="Loading..." class="top_cart dropdown-toggle" data-toggle="dropdown">
+                              <div class="shopcart">
+                                  <span class="handle pull-left"></span>
+                                  <span class="title">My cart</span>
+                                  <span class="text-shopping-cart cart-total-full">
+                                      <strong>0</strong>		
+                                  </span>
+                              </div>
+                          </a>
+                          <ul class="tab-content content dropdown-menu pull-right shoppingcart-box" role="menu">
+                              <li>
+                                  <p class="text-center">Your shopping cart is empty!</p>
+                              </li>
+                          </ul>
+                      </div>                                            
+                  </div>
+              </div>
+              <!--//end cart-->                        
+          </div>
+      </div>
+  </div>
+  <!-- end Header Bottom -->
+
+  <!-- Navbar switcher -->
+  <div class="navbar-switcher-container">
+      <div class="navbar-switcher">
+          <span class="i-inactive">
+              <i class="fa fa-caret-down"></i>
+          </span>
+          <span class="i-active fa fa-times"></span>
+      </div>
+  </div>
+  <!-- //end Navbar switcher -->
+
+</header>

@@ -1,0 +1,264 @@
+<div class="footer-container">
+  <!-- footer-top -->
+<div class="footer-top">
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="module social_block col-md-3 col-sm-12 col-xs-12">
+                  <ul class="social-block ">
+                      
+                      <li class="rss">
+                          <a class="_blank" href="#" target="_blank">
+                              <i class="fa fa-rss"></i>
+                          </a>
+                      </li>
+
+                      <li class="twitter">
+                          <a class="_blank" href="#" target="_blank">
+                              <i class="fa fa-twitter"></i>
+                          </a>
+                      </li>
+
+                      <li class="facebook">
+                          <a class="_blank" href="#" target="_blank">
+                              <i class="fa fa-facebook"></i>
+                          </a>
+                      </li>
+
+                      <li class="google_plus">
+                          <a class="_blank" href="#" target="_blank">
+                              <i class="fa  fa-google-plus"></i>
+                          </a>
+                      </li>
+
+                      <li class="pinterest">
+                          <a class="_blank" href="#" target="_blank">
+                              <i class="fa fa-pinterest"></i>
+                          </a>
+                      </li>
+
+                  </ul>
+              </div>
+              <div class="module news-letter">
+                  <div class="newsletter">
+                      <div class="title-block">
+                          <div class="page-heading">
+                              SIGN UP FOR OUR NEWSLETTER </div>
+                          <div class="pre-text">
+                              Get our updates on new arrivals and discount
+                          </div>
+                      </div>
+                      <div class="block_content">
+                          <form method="post" id="signup" name="signup">
+
+                              <div class="form-group required send-mail">
+                                  <div class="input-box">
+                                      <input type="email" placeholder="Your E- Mail" value="" class="form-control" id="txtemail" name="txtemail">
+                                  </div>
+                                  <div class="subcribe">
+                                      <button type="submit" class="btn btn-default btn-lg " onclick="return subscribe_newsletter();">Subscribe</button>
+
+                                  </div>
+                              </div>
+
+                          </form>
+                      </div>
+
+
+
+
+
+
+                  </div>
+                  <script type="text/javascript">
+                      function subscribe_newsletter() {
+                          var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                          var email = $('#txtemail').val();
+                          var d = new Date();
+                          var createdate = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+                          var status = 0;
+                          var dataString = 'email=' + email + '&createdate=' + createdate + '&status=' + status;
+                          if (email != "") {
+                              if (!emailpattern.test(email)) {
+                                  $('.show-error').remove();
+                                  $('.send-mail').after('<span class="show-error" style="color: red;margin-left: 10px"> Invalid Email </span>')
+                                  return false;
+                              }
+                              else {
+                                  $.ajax({
+                                      url: 'index.php?route=module/so_newletter_custom_popup/newsletter',
+                                      type: 'post',
+                                      data: dataString,
+                                      dataType: 'json',
+                                      success: function (json) {
+                                          $('.show-error').remove();
+                                          if (json.message == "Subscription Successfull") {
+                                              $('.send-mail').after('<span class="show-error" style="color: green;"> ' + json.message + '</span>');
+                                              setTimeout(function () {
+                                                  var this_close = $('.popup-close');
+                                                  this_close.parent().css('display', 'none');
+                                                  this_close.parents().find('.so_newletter_custom_popup_bg').removeClass('popup_bg');
+                                              }, 3000);
+
+                                          } else {
+                                              $('.send-mail').after('<span class="show-error" style="color: red;"> ' + json.message + '</span>');
+                                          }
+                                          document.getElementById('signup').reset();
+                                      }
+                                  });
+                                  return false;
+                              }
+                          }
+                          else {
+                              alert("Email Is Require");
+                              $(email).focus();
+                              return false;
+                          }
+                      }
+                  </script>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end footer-top -->
+
+<!-- footer-navbar -->
+<div class="footer-navbar ">
+  <div class="container content">
+      <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12 collapsed-block footer-links box-footer">
+              <div class="module clearfix">
+                  <div class="modcontent">
+                      <div class="content-block-footer">
+                          <div class="footer-logo">
+                              <img src="assets/image/catalog/cms/logo-footer.png" alt=""> </div>
+
+
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+                              simply dummy text of the printing and typesetting industry.</p>
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3 box-account box-footer">
+              <div class="module clearfix">
+                  <h3 class="modtitle">My Account</h3>
+                  <div class="modcontent">
+                      <ul class="menu">
+                          <li>
+                              <a href="#">Brands</a>
+                          </li>
+                          <li>
+                              <a href="#">Gift Certificates</a>
+                          </li>
+                          <li>
+                              <a href="#">Affiliates</a>
+                          </li>
+                          <li>
+                              <a href="#">Specials</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="col-sm-6 col-md-3 box-information box-footer">
+              <div class="module clearfix">
+                  <h3 class="modtitle">Information</h3>
+                  <div class="modcontent">
+                      <ul class="menu">
+                          <li>
+                              <a href="#">About Us</a>
+                          </li>
+                          <li>
+                              <a href="#">FAQ</a>
+                          </li>
+                          <li>
+                              <a href="#">Pricing Tables</a>
+                          </li>
+                          <li>
+                              <a href="#">Terms Conditions</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+          <div class="col-sm-6 col-md-3 collapsed-block box-footer">
+              <div class="module clearfix">
+
+
+                  <h3 class="modtitle">About Us</h3>
+                  <div class="modcontent">
+                      <ul class="contact-address">
+                          <li>
+                              <span class="fa fa-home"></span> My Company, 42 avenue des Champs</li>
+                          <li>
+                              <span class="fa fa-envelope"></span> Email:
+                              <a href="#"> sales@yourcompany.com</a>
+                          </li>
+                          <li>
+                              <span class="fa fa-phone">&nbsp;</span> Phone 1: 0123456789</li>
+                      </ul>
+                      <ul class="payment-method">
+                          <li>
+                              <a title="Payment Method" href="#">
+                                  <img src="assets/image/catalog/cms/payment/payment-1.png" alt="Payment">
+                              </a>
+                          </li>
+                          <li>
+                              <a title="Payment Method" href="#">
+                                  <img src="assets/image/catalog/cms/payment/payment-2.png" alt="Payment">
+                              </a>
+                          </li>
+                          <li>
+                              <a title="Payment Method" href="#">
+                                  <img src="assets/image/catalog/cms/payment/payment-3.png" alt="Payment">
+                              </a>
+                          </li>
+                          <li>
+                              <a title="Payment Method" href="#">
+                                  <img src="assets/image/catalog/cms/payment/payment-4.png" alt="Payment">
+                              </a>
+                          </li>
+                          <li>
+                              <a title="Payment Method" href="#">
+                                  <img src="assets/image/catalog/cms/payment/payment-5.png" alt="Payment">
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+  </div>
+</div>
+<!-- end footer-navbar -->
+
+<!-- footer-bottom -->
+<div class="footer-bottom-block ">
+  <div class=" container">
+      <div class="row">
+          <div class="col-sm-8 copyright-text">
+              SO Maxshop © 2016- 2018 MAGENTECH Store. All Rights Reserved. </div>
+
+          <div class="col-sm-4">
+          </div>
+
+      </div>
+
+  </div>
+</div>
+<!-- end  footer-bottom -->
+</div>

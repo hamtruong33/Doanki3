@@ -1,0 +1,56 @@
+<h3> Account Register</h3>
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" formControlName="username">
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" formControlName="password">
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <textarea formControlName="description" cols="20" rows="5"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>
+                <input type="checkbox" formControlName="status">
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" formControlName="gender" value="male">Male
+                <br>
+                <input type="radio" formControlName="gender" value="female">Female
+            </td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td>
+               <select formControlName="role">
+                   <option value="r1">Role 1</option>
+                   <option value="r2">Role 2</option>
+                   <option value="r3">Role 3</option>
+                   <option value="r4">Role 4</option>
+                   <option value="r5">Role 5</option>
+                   <option value="r6">Role 6</option>
+               </select>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Save">
+            </td>
+        </tr>
+    </table>
+</form>

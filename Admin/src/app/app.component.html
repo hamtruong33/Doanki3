@@ -1,0 +1,54 @@
+<h3> Hello world</h3>
+Age:{{age}}
+<br>
+FullName:{{fullName}}
+<br>
+Status:{{status}}
+<br>
+Email:{{email}}
+<br>
+<h3> Product Infor</h3>
+<table border="1">
+    <tr>
+        <td>ID:</td>
+        <td>{{product.id}}</td>
+    </tr>
+     <tr>
+        <td>Name:</td>
+        <td>{{product.name}}</td>
+    </tr>
+     <tr>
+        <td>Photo:</td>
+        <td><img src="assets/images/{{product.photo}}"></td>
+    </tr>
+     <tr>
+        <td>Price:</td>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <td>Quantity:</td>
+        <td>{{product.quantity}}</td>
+    </tr>
+</table>
+<h3> Product List</h3>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+
+    </tr>
+    <tr *ngFor="let p of products">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>
+           <img src="assets/images/{{p.photo}}">
+            </td>
+        <td>{{p.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td></td>
+    </tr>
+</table>

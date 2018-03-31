@@ -1,0 +1,25 @@
+/*----------------------------------
+*  -----------Target IE 9 and HIGHER -----------------
+*---------------------------*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #sosearchpro.so-search .select_category select {
+    width: 120px; }
+
+  .icon-select:after {
+    display: none; }
+
+  .so-search#sosearchpro .select_category select {
+    margin-right: 0; }
+
+  .left_column .so-vertical-menu .vertical ul.megamenu > li.with-sub-menu > a:after {
+    position: static;
+    right: 15px;
+    display: block; }
+
+  #sosearchpro .icon-select:after {
+    display: none; }
+
+  .rtl .so-search#sosearchpro .select_category select {
+    margin-left: 0; } }
+
+/*# sourceMappingURL=ie9-and-up.css.map */
