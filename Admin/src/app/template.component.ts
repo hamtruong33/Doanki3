@@ -8,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TemplateComponent implements OnInit {
-   
-        ngOnInit()  {
-           
 
-        }
+    ngOnInit() { }
 
-    constructor(
-
-    ){}
+    constructor() { }
+    ngAfterViewInit(){
+        
+    }
 
 
 }

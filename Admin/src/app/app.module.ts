@@ -17,6 +17,10 @@ import {TemplateComponent} from './template.component';
 import {LoginComponent} from './component/account/login/login.component';
 
 import {routing} from './app.routing';
+import { AppheaderComponent } from './component/appheader/appheader.component';
+import { AppfooterComponent } from './component/appfooter/appfooter.component';
+import { AppmenuComponent } from './component/appmenu/appmenu.component';
+import { AppsettingComponent } from './component/appsetting/appsetting.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import {routing} from './app.routing';
     AboutUsComponent,
     NewsComponent,
     TemplateComponent,
-    LoginComponent
+    LoginComponent,
+    AppheaderComponent,
+    AppfooterComponent,
+    AppmenuComponent,
+    AppsettingComponent
   ],
   imports: [
     BrowserModule,

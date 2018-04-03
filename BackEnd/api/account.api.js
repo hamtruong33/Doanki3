@@ -84,6 +84,11 @@ var AccountAPI={
             }
 
         });
+    },
+    login:function(req,res){
+        
+        Account.find({username:req.body.username});
+
     }
 
 };
