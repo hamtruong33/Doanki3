@@ -1,0 +1,12 @@
+Admin 
+load danh sach shop 
+duyet shop 
+duyet product 
+
+
+
+SuperAdmin 
+load danh sach account , user 
+them xoa sua account user , shop
+them xoa sua category 
+xem danh sach order 

@@ -1,36 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormBuilder } from '@angular/forms';
-import {Account} from '../../../entities/account.entity';
-import { HttpErrorResponse } from '@angular/common/http';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import {AccountService} from '../../../services/account.service';
-
 @Component({
-    selector: 'app-applogin',
-    templateUrl: 'login.component.html'
+  selector: 'app-login',
+  templateUrl: './login.component.html'
+
 })
 export class LoginComponent implements OnInit {
-    isLoginError : boolean = false;
+  private loginForm: FormGroup;
+  errorMsg:string='';
 
-    constructor(
-        private formBuilder :FormBuilder,
-        private accountservice: AccountService,
-        private router: Router
-    ) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private accountService :AccountService
+   ) { }
 
-    ngOnInit() {}
-    login(username,password){
-        this.accountservice.checkaccount(username,password).subscribe((data : any)=>{
-            localStorage.setItem('userToken',data.access_token);
-            this.router.navigate(['/home']);
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    });
+  }
+  login():void {
+
+    this.accountService.login(this.loginForm.value
+      .username, this.loginForm.value.password).subscribe(
+          res => {
+              if(res.data.count == 1) {
+                  this.errorMsg = '';
+                  localStorage.setItem('auth_token', this.loginForm.value
+                  .username);
+                  this.router.navigate(['']);
+              } else {
+                  this.errorMsg = 'Invalid Account';
+              }
           },
-          (err : HttpErrorResponse)=>{
-            this.isLoginError = true;
-          });
-        
-    }
-
-    
-
+          error => {
+              console.log(error)
+          }
+      );
+  }
 
 }

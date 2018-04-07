@@ -3,6 +3,8 @@ import {Response,Http,Headers,Request,RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx'; // de xu ly bat dong bo 
 import 'rxjs/add/operator/map';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 
 
 import {Account} from '../entities/account.entity';
@@ -10,6 +12,7 @@ import {Account} from '../entities/account.entity';
 @Injectable()
 export class AccountService {
     private BASE_URL : string = 'http://localhost:9999/api/account/';
+    private loggedIn = false;
     constructor(
         private http :Http,
         
@@ -41,10 +44,19 @@ export class AccountService {
          return this.http.delete(this.BASE_URL+'delete/'+id)
                         .map((res:Response)=>res.json());
     }
-    checkaccount(username,password){
-        var data = "username=" + username + "&password=" + password + "&grant_type=password";
-    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded','No-Auth':'True' });
-    return this.http.post(this.BASE_URL + '/token', data, );
+    isLoggedIn(): boolean {
+        return this.loggedIn;
+    }
+    login(username:string, password:string):Observable<any>{
+        return this.http.post(this.BASE_URL + 'login', { username: username, password: password })
+            .map((res: Response) => {
+                var result = res.json();
+                this.loggedIn = result.count == 1;
+                return { status: res.status, data: result };
+            })
+            .catch((error: any) => {
+                return Observable.throw(new Error(error.status))
+            });
 
     }
     
