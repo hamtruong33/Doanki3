@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import {routing} from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import {MathService } from'./services/math.service';
 import {CalculatorService } from'./services/Calculator.service';
@@ -18,6 +20,7 @@ import { AppfooterComponent } from './component/appfooter/appfooter.component';
 import { AppmenuComponent } from './component/appmenu/appmenu.component';
 import { AppsettingComponent } from './component/appsetting/appsetting.component';
 import { LoginComponent } from './component/account/login/login.component';
+import { ListAccountComponent } from './component/account/listaccount/listaccount.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +34,15 @@ import { LoginComponent } from './component/account/login/login.component';
     AppmenuComponent,
     AppsettingComponent,
     LoginComponent,
+    ListAccountComponent,
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    routing
+    routing,
+    HttpModule
 
   ],
   providers: [
