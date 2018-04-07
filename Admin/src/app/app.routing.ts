@@ -14,7 +14,8 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'aboutus', component: AboutUsComponent },
     { path: 'news', component: NewsComponent },
-    { path: '**', component: HomeComponent },
+    { path: '**', component: HomeComponent }
+    
     /// '**' tuong duong voi ko co duong dan nao giong nhu tren 
 
 ];

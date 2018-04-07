@@ -12,9 +12,7 @@ export class TemplateComponent implements OnInit {
     ngOnInit() { }
 
     constructor() { }
-    ngAfterViewInit(){
-        
-    }
+    
 
 
 }

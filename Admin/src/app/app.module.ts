@@ -8,11 +8,7 @@ import {CalculatorService } from'./services/Calculator.service';
 import {AccountService} from './services/account.service'
 import {AuthGuard} from './services/auth.guard'
 
-import {EventComponent} from './event.component';
 import { AppComponent } from './app.component';
-import {DataBindingComponent} from './databinding.component';
-import {DemoServicesComponent} from './demoservices.component';
-import {AccountComponent} from './account.component';
 import {HomeComponent} from './component/home/home.component';
 import {AboutUsComponent} from './component/aboutus/aboutus.component';
 import {NewsComponent} from './component/news/news.component';
@@ -26,10 +22,6 @@ import { LoginComponent } from './component/account/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EventComponent,
-    DataBindingComponent,
-    DemoServicesComponent,
-    AccountComponent,
     HomeComponent,
     AboutUsComponent,
     NewsComponent,
