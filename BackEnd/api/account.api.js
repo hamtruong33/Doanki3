@@ -86,8 +86,13 @@ var AccountAPI={
         });
     },
     login:function(req,res){
-        
-        Account.find({username:req.body.username});
+        Account.find({$and:[{username:req.body.username},{password:req.body.password}]},function(error,result){
+            if(error){throw error;}
+            else{
+                res.status(200).json(result);
+            }
+        });
+       
 
     }
 

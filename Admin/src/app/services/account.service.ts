@@ -50,10 +50,11 @@ export class AccountService {
         return this.loggedIn;
     }
     login(username:string, password:string):Observable<any>{
+       
         return this.http.post(this.BASE_URL + 'login', { username: username, password: password })
             .map((res: Response) => {
                 var result = res.json();
-                this.loggedIn = result.count == 1;
+                this.loggedIn = result.length == 1;
                 return { status: res.status, data: result };
             })
             .catch((error: any) => {

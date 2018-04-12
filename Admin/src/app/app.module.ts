@@ -10,7 +10,6 @@ import {CalculatorService } from'./services/Calculator.service';
 import {AccountService} from './services/account.service'
 import {AuthGuard} from './services/auth.guard'
 
-import { AppComponent } from './app.component';
 import {HomeComponent} from './component/home/home.component';
 import {AboutUsComponent} from './component/aboutus/aboutus.component';
 import {NewsComponent} from './component/news/news.component';
@@ -21,10 +20,11 @@ import { AppmenuComponent } from './component/appmenu/appmenu.component';
 import { AppsettingComponent } from './component/appsetting/appsetting.component';
 import { LoginComponent } from './component/account/login/login.component';
 import { ListAccountComponent } from './component/account/listaccount/listaccount.component';
+import { HomelayoutComponent } from './layout/homelayout/homelayout.component';
+import { LoginlayoutComponent } from './layout/loginlayout/loginlayout.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     AboutUsComponent,
     NewsComponent,
@@ -35,6 +35,8 @@ import { ListAccountComponent } from './component/account/listaccount/listaccoun
     AppsettingComponent,
     LoginComponent,
     ListAccountComponent,
+    HomelayoutComponent,
+    LoginlayoutComponent,
     
   ],
   imports: [

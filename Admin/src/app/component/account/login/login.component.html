@@ -1,44 +1,45 @@
-<!-- Horizontal Form -->
-<div class="col-md-5"  >
-  <div class="box box-info">
-      <div class="box-header with-border">
-          <h3 class="box-title">Login Form</h3>
-      </div>
-      <!-- /.box-header -->
-      <!-- form start -->
-      <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="login()">
-          <div class="box-body">
-              <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="../../index2.html">
+            <b>Admin</b>LTE</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
 
-                  <div class="col-sm-10">
-                      <input type="text" formControlName="username" class="form-control" id="inputEmail3" placeholder="Username" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <form action="../../index2.html" method="post" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group has-feedback">
+                <input type="email" formControlName="username" class="form-control" placeholder="UserName">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            {{errorMsg}}
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox"> Remember Me
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
 
-                  <div class="col-sm-10">
-                      <input type="password" formControlName="password" class="form-control" id="inputPassword3" placeholder="Password">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                          <label>
-                              <input type="checkbox"> Remember me
-                          </label>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- /.box-body -->
-          <div class="box-footer">
-              
-              <button type="submit" class="btn btn-info pull-right">Sign in</button>
-          </div>
-          <!-- /.box-footer -->
-      </form>
-  </div>
+
+        <!-- /.social-auth-links -->
+
+        <a href="#">I forgot my password</a>
+        <br>
+
+
+    </div>
+    <!-- /.login-box-body -->
 </div>
-<!-- /.box -->

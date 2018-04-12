@@ -1,0 +1,25 @@
+/*----------------------------------
+*  -----------Target IE 9 and HIGHER -----------------
+*---------------------------*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #sosearchpro.so-search .select_category select {
+    width: 120px; }
+
+  .icon-select:after {
+    display: none; }
+
+  #sosearchpro .icon-select:after {
+    display: none; }
+
+  .so-search#sosearchpro .select_category select {
+    margin-right: 0; }
+
+  .module.cus-style-supper-cate .main-left .hot-category .category-wrap-cat .slider .cat_slider_inner .item {
+    text-align: left; }
+
+  .rtl .so-search#sosearchpro .select_category select {
+    margin-left: 0; }
+  .rtl .module.cus-style-supper-cate .main-left .hot-category .category-wrap-cat .slider .cat_slider_inner .item {
+    text-align: right; } }
+
+/*# sourceMappingURL=ie9-and-up.css.map */

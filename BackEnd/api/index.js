@@ -21,6 +21,7 @@ router.post('/account/create', AccountAPI.create);
 router.delete('/account/delete/:id', AccountAPI.delete);
 router.put('/account/update/:id', AccountAPI.update);
 router.get('/account/search/:keyword', AccountAPI.search);
+router.post('/account/login', AccountAPI.login);
 
 //Router for product
 
