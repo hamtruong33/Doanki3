@@ -11,7 +11,7 @@ var RoleAPI={
         });
 
     },
-    find: function(req, res){
+    findById: function(req, res){
         Role.findById(req.params.id,function(error,role){
             if(error){throw error;
             }else{
@@ -21,12 +21,8 @@ var RoleAPI={
     },
     create:function(request,response){
         var newRole = new Role({
-            name :request.body.name
-            
-            
-            
-
-            
+            role_name   :request.body.role_name,
+            role_des    :request.body.role_des
         });
         newRole.save(function(error){
             if(error){
@@ -39,10 +35,8 @@ var RoleAPI={
     update:function(request,response){
         Role.findByIdAndUpdate(
             request.body._id,{
-            name :request.body.name,
-            
-            
-           
+                role_name   :request.body.role_name,
+                role_des    :request.body.role_des
             },
             function(error,result){
                 if(error){

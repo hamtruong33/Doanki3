@@ -1,10 +1,8 @@
 var mongoose = require('mongoose');
 var RoleSchema = new mongoose.Schema(
     {
-        name: [{type:String,require:true}],
-        
-        
-
+        role_name: [{type:String,require:true}],
+        role_des : String         
         
     },
     {

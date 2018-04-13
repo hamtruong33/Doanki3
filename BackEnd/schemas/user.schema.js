@@ -1,16 +1,18 @@
 var mongoose = require('mongoose');
 var UserSchema = new mongoose.Schema(
     {
-        email: [{type:String,require:true}],
-        password: [{type:String,require:true}],
-        fullName:String,
-        phone:Number,
-        shopId:String,
-        status:Boolean
-
-        
-
-        
+        user_firstname: [{type:String,require:true}],
+        user_lastname: [{type:String,require:true}],
+        user_email : [{type:String,require:true}],
+        user_password:[{type:String,require:true}],
+        user_phone:[{type:String,require:true}],
+        user_photo:String,
+        user_birthday:Date,
+        user_create:Date,
+        user_address:String,
+        user_shopactive:Boolean,
+        status:Boolean,
+        rip_account:Boolean
     },
     {
         versionKey: false

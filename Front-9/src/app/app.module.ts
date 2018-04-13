@@ -14,11 +14,15 @@ import { CategorylistComponent } from './components/user-layout/categorylist/cat
 import { DealblockproductComponent } from './components/block-layout/dealblockproduct/dealblockproduct.component';
 import {ModuledealsComponent} from './components/block-layout/moduledeals/moduledeals.component';
 import { ProducttocategoryComponent } from './components/block-layout/producttocategory/producttocategory.component'
+import { UserlayoutComponent } from './layout/userlayout/userlayout.component';
+import { AdminlayoutComponent } from './layout/adminlayout/adminlayout.component';
+import { HomadminComponent } from './components/admin/homadmin/homadmin.component';
 
 import {routing} from './app.routing'
 
 import {UserService} from './services/user.service';
 import {HomeGuard} from './services/userguard.service';
+
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import {HomeGuard} from './services/userguard.service';
     CategorylistComponent,
     DealblockproductComponent,
     ModuledealsComponent,
-    ProducttocategoryComponent
+    ProducttocategoryComponent,
+    UserlayoutComponent,
+    AdminlayoutComponent,
+    HomadminComponent
   ],
   imports: [
     BrowserModule,

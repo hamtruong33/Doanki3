@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
-declare var $: any;
-window['$'] = window['jQuery'] = $;
+//declare var $: any;
+//window['$'] = window['jQuery'] = $;
 
 @Component({
     selector: 'app-root',

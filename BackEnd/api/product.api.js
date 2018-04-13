@@ -11,7 +11,37 @@ var ProductAPI={
         });
 
     },
-    find: function(req, res){
+    findByCategory: function(request,response){
+        Product.find({id_category: request.params.id_category},function(error,products){
+            if(error){
+                throw error;
+            }else{
+                response.status(200).json(products);
+            }
+        });
+
+    },
+    findByShop: function(request,response){
+        Product.find({id_shop: request.params.id_shop},function(error,products){
+            if(error){
+                throw error;
+            }else{
+                response.status(200).json(products);
+            }
+        });
+    },
+
+    findByName: function(request,response){
+        Product.find({product_name: request.params.product_name},function(error,products){
+            if(error){
+                throw error;
+            }else{
+                response.status(200).json(products);
+            }
+        });
+    },
+
+    findById: function(req, res){
         Product.findById(req.params.id,function(error,product){
             if(error){throw error;
             }else{
@@ -19,19 +49,24 @@ var ProductAPI={
             }
         });
     },
+
+    
+
     create:function(request,response){
         var newProduct = new Product({
-            name :request.body.name,
-            price:request.body.price,
-            quantity:request.body.quantity,
-            photo:request.body.photo,
-            shopId:request.body.shopId,
-            categoryId:request.body.categoryId,
-            status:request.body.status,
-            accountId:request.body.accountId
-            
-            
-
+            product_name        : request.body.product_name,
+            product_pricestock  : request.body.product_pricestock,
+            product_pricesale   : request.body.product_pricesale,
+            product_manufact    : request.body.product_manufact,
+            id_shop             : request.body.id_shop,
+            id_category         : request.body.id_category,
+            product_datecreate  : request.body.product_datecreate,
+            product_quickken    : request.body.product_quickken,
+            product_description : request.body.product_description,
+            status              : request.body.status,
+            status_sale         : request.body.status_sale,
+            status_new          : request.body.status_new,
+            id_account          : request.body.id_account       
             
         });
         newProduct.save(function(error){
@@ -45,16 +80,19 @@ var ProductAPI={
     update:function(request,response){
         Product.findByIdAndUpdate(
             request.body._id,{
-                name :request.body.name,
-                price:request.body.price,
-                quantity:request.body.quantity,
-                photo:request.body.photo,
-                shopId:request.body.shopId,
-                categoryId:request.body.categoryId,
-                status:request.body.status,
-                accountId:request.body.accountId
-            
-           
+                product_name        : request.body.product_name,
+                product_pricestock  : request.body.product_pricestock,
+                product_pricesale   : request.body.product_pricesale,
+                product_manufact    : request.body.product_manufact,
+                id_shop             : request.body.id_shop,
+                id_category         : request.body.id_category,
+                product_datecreate  : request.body.product_datecreate,
+                product_quickken    : request.body.product_quickken,
+                product_description : request.body.product_description,
+                status              : request.body.status,
+                status_sale         : request.body.status_sale,
+                status_new          : request.body.status_new,
+                id_account          : request.body.id_account
             },
             function(error,result){
                 if(error){
@@ -77,15 +115,6 @@ var ProductAPI={
 
         });
     },
-    search:function(req,res){
-        
-        Product.find({name:{$regex:req.params.keyword}},function(error,result){
-            if(error){throw error;}
-            else{
-                res.status(200).json(result);
-            }
-
-        });
-    }
+    
 };
 module.exports= ProductAPI;

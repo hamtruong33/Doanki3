@@ -22,18 +22,18 @@ var UserAPI = {
     },
     create: function (request, response) {
         var newUser = new User({
-            email: request.body.email,
-            password: request.body.password,
-            fullName: request.body.fullName,
-            phone: request.body.phone,
-            shopId: request.body.shopId,
-            status: request.body.status
-
-
-
-
-
-
+            user_firstname: request.body.email,
+            user_lastname: request.body.user_lastname,
+            user_email : request.body.user_email,
+            user_password:request.body.user_password,
+            user_phone:request.body.user_phone,
+            user_photo:request.body.user_photo,
+            user_birthday:request.body.user_birthday,
+            user_create:request.body.user_create,
+            user_address:request.body.user_address,
+            user_shopactive:request.body.user_shopactive,
+            status:request.body.status,
+            rip_account:request.body.rip_account
         });
         newUser.save(function (error) {
             if (error) {
@@ -46,14 +46,18 @@ var UserAPI = {
     update: function (request, response) {
         User.findByIdAndUpdate(
             request.body._id, {
-                email: request.body.email,
-                password: request.body.password,
-                fullName: request.body.fullName,
-                phone: request.body.phone,
-                shopId: request.body.shopId,
-                status: request.body.status
-
-
+                user_firstname: request.body.email,
+                user_lastname: request.body.user_lastname,
+                user_email : request.body.user_email,
+                user_password:request.body.user_password,
+                user_phone:request.body.user_phone,
+                user_photo:request.body.user_photo,
+                user_birthday:request.body.user_birthday,
+                user_create:request.body.user_create,
+                user_address:request.body.user_address,
+                user_shopactive:request.body.user_shopactive,
+                status:request.body.status,
+                rip_account:request.body.rip_account
             },
             function (error, result) {
                 if (error) {

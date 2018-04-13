@@ -11,7 +11,7 @@ var AccountAPI={
         });
 
     },
-    find: function(req, res){
+    findById: function(req, res){
         Account.findById(req.params.id,function(error,account){
             if(error){throw error;
             }else{
@@ -20,18 +20,16 @@ var AccountAPI={
         });
     },
     create:function(request,response){
-        var newAccount = new Account({
-            username :request.body.username,
-            password:request.body.password,
-            fullName:request.body.fullName,
+        var newAccount = new Account({            
+            acc_firstname: request.body.acc_firstname,
+            acc_lastname: request.body.acc_lastname,
+            acc_email: request.body.acc_email,
+            acc_password: request.body.acc_password,        
+            acc_phone: request.body.acc_phone,
+            acc_photo: request.body.acc_photo,
+            acc_create: request.body.acc_create,
             status:request.body.status,
-            email:request.body.email,
-            phone:request.body.phone,
-            roleId:request.body.roleId
-            
-            
-
-            
+            role:request.body.role 
         });
         newAccount.save(function(error){
             if(error){
@@ -44,15 +42,15 @@ var AccountAPI={
     update:function(request,response){
         Account.findByIdAndUpdate(
             request.body._id,{
-            username :request.body.username,
-            password:request.body.password,
-            fullName:request.body.fullName,
-            status:request.body.status,
-            email:request.body.email,
-            phone:request.body.phone,
-            roleId:request.body.roleId
-            
-           
+                acc_firstname: request.body.acc_firstname,
+                acc_lastname: request.body.acc_lastname,
+                acc_email: request.body.acc_email,
+                acc_password: request.body.acc_password,        
+                acc_phone: request.body.acc_phone,
+                acc_photo: request.body.acc_photo,
+                acc_create: request.body.acc_create,
+                status:request.body.status,
+                role:request.body.role            
             },
             function(error,result){
                 if(error){
@@ -75,9 +73,8 @@ var AccountAPI={
 
         });
     },
-    search:function(req,res){
-        
-        Account.find({fullName:{$regex:req.params.keyword}},function(error,result){
+    searchByemail:function(req,res){        
+        Account.find({acc_email:{$regex:req.params.keyword}},function(error,result){
             if(error){throw error;}
             else{
                 res.status(200).json(result);
@@ -86,13 +83,12 @@ var AccountAPI={
         });
     },
     login:function(req,res){
-        Account.find({$and:[{username:req.body.username},{password:req.body.password}]},function(error,result){
+        Account.find({$and:[{acc_email:req.body.acc_email},{acc_password:req.body.acc_password}]},function(error,result){
             if(error){throw error;}
             else{
                 res.status(200).json(result);
             }
-        });
-       
+        });      
 
     }
 

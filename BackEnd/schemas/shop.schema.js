@@ -1,17 +1,18 @@
 var mongoose = require('mongoose');
 var ShopSchema = new mongoose.Schema(
     {
-        name: [{type:String,require:true}],
-        address: String,
-        logo: String,
-        status:Boolean,
-        description:String,
-        phone:Number,
-        userId:String,
-        accountId:String
-        
-
-        
+        shop_name       : [{type:String,require:true}],
+        shop_address    : [{type:String,require:true}],
+        shop_logo       : String,
+        shop_hotline    : [{type:String,require:true}],
+        shop_title      : String,
+        id_user         : [{type:String,require:true}],
+        shop_datecreate : Date,
+        shop_dateusing  : Date,
+        id_account      : [{type:String,require:true}],
+        shop_active     : Boolean,
+        status          : Boolean,
+        shop_maincate   : String
     },
     {
         versionKey: false
