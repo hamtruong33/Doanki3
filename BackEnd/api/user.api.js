@@ -89,6 +89,27 @@ var UserAPI = {
             }
 
         });
+    },
+    login:function(req,res){
+        let data1 = {
+            user_email: req.body.user_email,
+            user_password: req.body.user_password
+        };
+
+        Account.findOne(data1).lean().exec(function (error, user)  {
+            if (error) { throw error; }
+            else {
+                //console.log(account);
+               /* let data = {
+                    id: account._id,
+                    role: account.role
+                };*/
+                //console.log(data);
+                var token = jwt.sign( { id: user._id}, config.secret, { expiresIn: 86400 });
+
+                res.status(200).send({ auth: true, token: token ,id: user._id});
+            }
+        });
     }
 
 };

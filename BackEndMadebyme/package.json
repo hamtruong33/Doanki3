@@ -1,0 +1,36 @@
+{
+  "name": "BackEndMadebyme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "atob": "^2.1.0",
+    "body-parser": "^1.18.2",
+    "consolidate": "^0.14.5",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.7.1",
+    "debug": "^2.6.1",
+    "express": "^4.16.3",
+    "express-generator": "^4.14.1",
+    "http": "^0.0.0",
+    "httpdispatcher": "^1.0.0",
+    "jade": "^1.11.0",
+    "jsonfile": "^2.2.3",
+    "jsonwebtoken": "^8.2.1",
+    "jwt-payload-decoder": "^1.2.4",
+    "mongoose": "^5.0.14",
+    "morgan": "^1.7.0",
+    "mysql": "^2.10.2",
+    "serve-favicon": "^2.3.2",
+    "socket.io": "^1.7.3",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

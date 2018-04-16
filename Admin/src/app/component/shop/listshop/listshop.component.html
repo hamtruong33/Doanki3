@@ -1,0 +1,64 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Data Table With Full Features</h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th hidden>Id</th>
+          <th> Name</th>
+          <th>Address</th>
+          <th>Logo</th>
+          <th>Phone</th>
+          <th>Title</th>
+          <th>User</th>
+          <th>DateCreate</th>
+          <th>DateUsing</th>
+          <th>Account</th>
+          <th>Active</th>
+          <th>Status</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shop of shops">
+          <td hidden>{{shop._id}}</td>
+          <td>{{shop.shop_name}}</td>
+          <td>{{shop.shop_address}}</td>
+          <td> {{shop.shop_logo}}</td>
+          <td>{{shop_hotline}}</td>
+          <td>{{shop.shop_title}}</td>
+          <td>{{shop.id_user}}</td>
+          <td>{{shop.shop_datecreate}}</td>
+          <td>{{shop.shop_dateusing}}</td>
+          <td>{{id_account}}</td>
+          <td> {{shop.shop_active}}</td>
+          <td>{{shop.status}}</td>
+          <td>{{shop.shop_maincate}}</td>
+        </tr>
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Id</th>
+          <th> Name</th>
+          <th>Address</th>
+          <th>Logo</th>
+          <th>Phone</th>
+          <th>Title</th>
+          <th>User</th>
+          <th>DateCreate</th>
+          <th>DateUsing</th>
+          <th>Account</th>
+          <th>Active</th>
+          <th>Status</th>
+          <th>Category</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.box-body -->
+</div>
+<!-- /.box -->

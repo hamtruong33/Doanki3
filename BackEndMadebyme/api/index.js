@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
-
-
+var requireRole = require('../requireRole');
+var SuperAdmin =['SuperAdmin'];
+var Admin=['Admin','SuperAdmin'];
 //tao ket noi den database 
 mongoose.connect('mongodb://localhost:27017/doanki3');
 
@@ -15,13 +16,15 @@ var ShopAPI=require('./shop.api');
 var OrderAPI=require('./order.api');
 
 //Router for account
-router.get('/account/findAll', AccountAPI.findAll);
+router.get('/account/findAll',requireRole(SuperAdmin), AccountAPI.findAll);
+router.get('/account/token', AccountAPI.token);
 router.get('/account/find/:id', AccountAPI.find);
 router.post('/account/create', AccountAPI.create);
 router.delete('/account/delete/:id', AccountAPI.delete);
 router.put('/account/update/:id', AccountAPI.update);
 router.get('/account/search/:keyword', AccountAPI.search);
 router.post('/account/login', AccountAPI.login);
+//router.post('/account/authenticate', AccountAPI.authenticate);
 
 //Router for product
 

@@ -9,12 +9,19 @@ import { AuthGuard } from './services/auth.guard';
 import { ListAccountComponent } from './component/account/listaccount/listaccount.component';
 import { HomelayoutComponent } from './layout/homelayout/homelayout.component';
 import { LoginlayoutComponent } from './layout/loginlayout/loginlayout.component';
+import { DuyetproductComponent } from './component/product/duyetproduct/duyetproduct.component';
+import { ProductdetailComponent } from './component/product/productdetail/productdetail.component';
+import { ListshopComponent } from './component/shop/listshop/listshop.component';
 
 const routes: Routes = [
     {
         path: '', component: HomelayoutComponent, children: [
             { path: '', component: HomeComponent },
-            { path: 'list-account', component: ListAccountComponent },]
+            { path: 'list-account', component: ListAccountComponent },
+            { path: 'checknewproduct', component: DuyetproductComponent },
+            { path: 'productdetail', component: ProductdetailComponent },
+            { path: 'list-shop', component: ListshopComponent },
+        ]
     },
     {
         path: '', component: LoginlayoutComponent, children: [

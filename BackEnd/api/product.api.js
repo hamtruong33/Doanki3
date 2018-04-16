@@ -49,6 +49,14 @@ var ProductAPI={
             }
         });
     },
+    findByStatus: function(req,res){
+        Product.find({status:false},function(error,products){
+            if(error){throw error;
+            }else{
+                res.status(200).json(products);
+            }
+        });
+    },
 
     
 

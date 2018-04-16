@@ -11,7 +11,7 @@ var ShopAPI={
         });
 
     },
-    find: function(req, res){ 
+    findById: function(req, res){ 
         Shop.findById(req.params.id,function(error,shop){
             if(error){throw error;
             }else{
