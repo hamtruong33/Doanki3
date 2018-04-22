@@ -10,7 +10,7 @@ var AccountSchema = new mongoose.Schema(
         acc_photo: String,
         acc_create: Date,
         status:Boolean,
-        role:String 
+        role:{type:mongoose.Schema.Types.ObjectId,ref:'Role'} 
         
     },
     {

@@ -25,10 +25,23 @@ var ProductAPI={
         Product.find({id_shop: request.params.id_shop},function(error,products){
             if(error){
                 throw error;
+                
             }else{
                 response.status(200).json(products);
             }
         });
+
+    },
+    findByShopName: function(request,response){
+        Product.find().populate('id_shop','shop_name').populate('id_category','cate_name')
+        .exec(function(err,products){  
+            if(err){throw err;
+            }else{
+                
+                response.status(200).json(products);
+            }
+        });
+
     },
 
     findByName: function(request,response){

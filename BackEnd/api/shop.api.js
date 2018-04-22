@@ -19,6 +19,17 @@ var ShopAPI={
             }
         });
     },
+    findbyuser: function(req,res){
+        Shop.find().populate({path:'id_user',select:'user_lastname'}).populate('id_account','acc_lastname')
+        .exec(function(err,shops){  
+            if(err){throw err;
+            }else{
+                
+                res.status(200).json(shops);
+                //console.log(shop.id_user);
+            }
+        });
+    },
     
     create:function(request,response){
         var newShop = new Shop({
@@ -90,6 +101,7 @@ var ShopAPI={
 
         });
     }
+    
 
 };
 module.exports= ShopAPI;

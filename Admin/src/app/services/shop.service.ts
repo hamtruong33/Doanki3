@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { Shop } from '../entities/shop.entity';
+import { ListShop } from '../entities/listshop.entity';
 
 
 
@@ -50,6 +51,28 @@ export class ShopService {
     }
     findById(id): Observable<Shop> {
         return this.http.get(this.BASE_URL + 'findById/' + id)
+            .map((res: Response) => { // neu ham get tra ket qua kieu Response thi thuc hien hanh dong sau {}
+                return res.json();
+
+            })
+            .catch((err: any) => {
+                return Observable.throw(new Error(err.status));
+
+            });
+    }
+    update(shop: Shop){
+        var headers = new Headers({
+            'Content-Type':'application/json'
+        });
+        var options = new RequestOptions({
+            headers: headers
+        });
+        var body = JSON.stringify(shop);
+        return this.http.put(this.BASE_URL+'update', body, options).map((res:Response)=>res.json());
+    }
+    findbyuser(): Observable<ListShop[]> {
+        
+        return this.http.get(this.BASE_URL + 'findbyuser/')
             .map((res: Response) => { // neu ham get tra ket qua kieu Response thi thuc hien hanh dong sau {}
                 return res.json();
 

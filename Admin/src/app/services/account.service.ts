@@ -21,6 +21,7 @@ export class AccountService {
     ){}
 
     findAll():Observable<Account[]>{
+        
         return this.http.get(this.BASE_URL+'findAll')
         .map((res : Response) =>{ // neu ham get tra ket qua kieu Response thi thuc hien hanh dong sau {}
             return res.json();

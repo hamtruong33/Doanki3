@@ -2,7 +2,7 @@
 <section class="content-header">
   <h1>
     List Account
-
+    <small></small>
   </h1>
   <ol class="breadcrumb">
     <li>
@@ -10,7 +10,7 @@
         <i class="fa fa-dashboard"></i> Home</a>
     </li>
     <li>
-      <a href="#">List</a>
+      <a href="#">Account</a>
     </li>
     <li class="active">List Account</li>
   </ol>
@@ -20,15 +20,18 @@
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
+
+
       <div class="box">
         <div class="box-header">
           <h3 class="box-title"></h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table id="example2" class="table table-bordered table-hover">
+          <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
+                <th hidden>Id</th>
                 <th>UserName</th>
                 <th>Password</th>
                 <th>FullName</th>
@@ -37,12 +40,14 @@
                 <th>Phone</th>
                 <th>Role</th>
                 <th>Option</th>
+
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let acc of accounts">
-                <td>{{acc.username}}</td>
-                <td>{{acc.password}} </td>
+                <td hidden>{{acc._id}}</td>
+                <td><a [routerLink]="['/accountdetail',{ id:acc._id }]">{{acc.username}} </a></td>
+                <td>{{acc.password}}</td>
                 <td>{{acc.fullName}}</td>
                 <td>{{acc.status}}</td>
                 <td>{{acc.email}}</td>
@@ -54,16 +59,26 @@
                   <input type="button"(click)="edit(acc._id)" value="Edit">
                 </td>
               </tr>
-
+              
             </tbody>
+            <tfoot>
+              <tr>
+                  <th hidden>Id</th>
+                  <th>UserName</th>
+                  <th>Password</th>
+                  <th>FullName</th>
+                  <th>Status</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Role</th>
+                  <th>Option</th>
 
+              </tr>
+            </tfoot>
           </table>
         </div>
         <!-- /.box-body -->
       </div>
-      <!-- /.box -->
-
-
       <!-- /.box -->
     </div>
     <!-- /.col -->

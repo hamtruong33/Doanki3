@@ -7,50 +7,42 @@ import { HttpModule } from '@angular/http';
 
 
 
-import { MathService } from './services/math.service';
-import { CalculatorService } from './services/Calculator.service';
 import { AccountService } from './services/account.service';
 import { AuthGuard } from './services/auth.guard';
 import { ProductService } from './services/product.service';
 import { ProductPhotoService } from './services/productphoto.service';
 import { ShopService } from './services/shop.service';
+import { UserService } from './services/user.service';
+
 
 
 
 import { HomeComponent } from './component/home/home.component';
-import { AboutUsComponent } from './component/aboutus/aboutus.component';
-import { NewsComponent } from './component/news/news.component';
 import { TemplateComponent } from './template.component';
-import { AppheaderComponent } from './component/appheader/appheader.component';
-import { AppfooterComponent } from './component/appfooter/appfooter.component';
-import { AppmenuComponent } from './component/appmenu/appmenu.component';
-import { AppsettingComponent } from './component/appsetting/appsetting.component';
 import { LoginComponent } from './component/account/login/login.component';
 import { ListAccountComponent } from './component/account/listaccount/listaccount.component';
-import { HomelayoutComponent } from './layout/homelayout/homelayout.component';
-import { LoginlayoutComponent } from './layout/loginlayout/loginlayout.component';
-import { DuyetproductComponent } from './component/product/duyetproduct/duyetproduct.component';
 import { ProductdetailComponent } from './component/product/productdetail/productdetail.component';
 import { ListshopComponent } from './component/shop/listshop/listshop.component';
+import { ShopdetailComponent } from './component/shop/shopdetail/shopdetail.component';
+import { ListproductComponent } from './component/product/listproduct/listproduct.component';
+import { ListuserComponent } from './component/user/listuser/listuser.component';
+import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
+import { ListorderComponent } from './component/order/listorder/listorder.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    AboutUsComponent,
-    NewsComponent,
     TemplateComponent,
-    AppheaderComponent,
-    AppfooterComponent,
-    AppmenuComponent,
-    AppsettingComponent,
     LoginComponent,
     ListAccountComponent,
-    HomelayoutComponent,
-    LoginlayoutComponent,
-    DuyetproductComponent,
     ProductdetailComponent,
     ListshopComponent,
+    ShopdetailComponent,
+    ListproductComponent,
+    ListuserComponent,
+    UserdetailComponent,
+    ListorderComponent,
 
   ],
   imports: [
@@ -58,17 +50,17 @@ import { ListshopComponent } from './component/shop/listshop/listshop.component'
     FormsModule,
     ReactiveFormsModule,
     routing,
-    HttpModule
+    HttpModule,
+    HttpClientModule
 
   ],
   providers: [
-    MathService,
-    CalculatorService,
     AccountService,
     AuthGuard,
     ProductService,
     ProductPhotoService,
-    ShopService
+    ShopService,
+    UserService
     
   ],
   bootstrap: [TemplateComponent]// chi ra component nao chay dau tien 

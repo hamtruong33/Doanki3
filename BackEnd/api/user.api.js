@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var User = require('../schemas/user.schema');
+var jwt = require('jsonwebtoken');
+var config = require('../config');
 var UserAPI = {
     findAll: function (request, response) {
         User.find({}, function (error, users) {
@@ -96,7 +98,7 @@ var UserAPI = {
             user_password: req.body.user_password
         };
 
-        Account.findOne(data1).lean().exec(function (error, user)  {
+        User.findOne(data1).lean().exec(function (error, user)  {
             if (error) { throw error; }
             else {
                 //console.log(account);

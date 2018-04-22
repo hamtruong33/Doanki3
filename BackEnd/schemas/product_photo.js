@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var ProductphotoShema = new mongoose.Schema(
     {
-        id_product  : String,
+        id_product  : {type:mongoose.Schema.Types.ObjectId,ref:'Product'},
         photosmart  : String,
         photolarger : String  
     },
