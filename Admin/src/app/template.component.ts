@@ -15,9 +15,9 @@ export class TemplateComponent implements OnInit {
         private accountservice: AccountService
     ) { }
     ngOnInit() { 
-        if(!localStorage.getItem('idaccount')){
-            this.accountservice.redirectUrl ='/login';
-        }
+       // if(!localStorage.getItem('idaccount')){
+       //     this.accountservice.redirectUrl ='/login';
+      //  }
     }
     onLogout() {
         this.accountservice.logout();
