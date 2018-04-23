@@ -1,10 +1,12 @@
 export class Account {
-    _id: string ;
-    username: string;
-    password: string;
-    fullName: string;
-    status: boolean;
-    email: string;
-    phone: number;
-    roleId: string;
+    _id: string;
+    acc_firstname: string;;
+    acc_lastname: string;;
+    acc_email: string;;
+    acc_password: string;;
+    acc_phone: string;
+    acc_photo: string;
+    acc_create: Date;
+    status: Boolean;
+    role: string;
 }

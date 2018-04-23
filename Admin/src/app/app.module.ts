@@ -28,6 +28,11 @@ import { ListproductComponent } from './component/product/listproduct/listproduc
 import { ListuserComponent } from './component/user/listuser/listuser.component';
 import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
 import { ListorderComponent } from './component/order/listorder/listorder.component';
+import { AppComponent } from './app.component';
+import { LoginTemplateComponent } from './logintemplate.component';
+import { AddaccountComponent } from './component/account/addaccount/addaccount.component';
+import { AddshopComponent } from './component/shop/addshop/addshop.component';
+import { AddproductComponent } from './component/product/addproduct/addproduct.component';
 
 
 @NgModule({
@@ -43,6 +48,11 @@ import { ListorderComponent } from './component/order/listorder/listorder.compon
     ListuserComponent,
     UserdetailComponent,
     ListorderComponent,
+    AppComponent,
+    LoginTemplateComponent,
+    AddaccountComponent,
+    AddshopComponent,
+    AddproductComponent
 
   ],
   imports: [
@@ -63,7 +73,7 @@ import { ListorderComponent } from './component/order/listorder/listorder.compon
     UserService
     
   ],
-  bootstrap: [TemplateComponent]// chi ra component nao chay dau tien 
+  bootstrap: [AppComponent]// chi ra component nao chay dau tien 
 })
 
 export class AppModule { }

@@ -12,21 +12,38 @@ import { ShopdetailComponent } from './component/shop/shopdetail/shopdetail.comp
 import { ListuserComponent } from './component/user/listuser/listuser.component';
 import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
 import { ListorderComponent } from './component/order/listorder/listorder.component';
+import { LoginTemplateComponent } from './logintemplate.component';
 
 const routes: Routes = [
+    {
+        path: '',
+        component: TemplateComponent,
+        canActivate: [AuthGuard],
+        children:
+            [
+                { path: '', component: HomeComponent },
+                { path: 'list-account', component: ListAccountComponent },
+                { path: 'productdetail', component: ProductdetailComponent },
+                { path: 'list-shop', component: ListshopComponent },
+                { path: 'listproduct', component: ListproductComponent },
+                { path: 'shopdetail', component: ShopdetailComponent },
+                { path: 'listuser', component: ListuserComponent },
+                { path: 'userdetail', component: UserdetailComponent },
+                { path: 'listorder', component: ListorderComponent },
+                { path: 'home', component: HomeComponent },
+            ]
+    },
+    {
+        path: '',
+        component: LoginTemplateComponent,
+        children:
+            [
+                { path: 'login', component: LoginComponent }
+            ]
+    },
+    //{ path:'**',component:LoginComponent}
 
 
-    { path: '', component: HomeComponent },
-    { path: 'list-account', component: ListAccountComponent },
-    { path: 'productdetail', component: ProductdetailComponent },
-    { path: 'list-shop', component: ListshopComponent },
-    { path: 'listproduct', component: ListproductComponent },
-    { path: 'shopdetail', component: ShopdetailComponent },
-    { path: 'listuser', component: ListuserComponent },
-    { path: 'userdetail',component:UserdetailComponent },
-    { path: 'listorder',component:ListorderComponent },
-    { path: 'home', component: HomeComponent },
-    { path: '**', component: HomeComponent },
 
     /// '**' tuong duong voi ko co duong dan nao giong nhu tren 
 

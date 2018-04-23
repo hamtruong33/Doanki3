@@ -4,7 +4,7 @@ var router = express.Router();
 var requireRole = require('../requireRole');
 var verifyToken = require('../verifytokenuser');
 //var Guest =['5acd0aaf356e91022ac26159','5acd0aaf356e91022ac26157','5acd0aaf356e91022ac26155'];
-var Admin=['5acd0aaf356e91022ac26157','5acd0aaf356e91022ac26155'];
+var Admin=['5acd0aaf356e91022ac26157','5acd0aaf356e91022ac26159'];
 var SuperAdmin=['5acd0aaf356e91022ac26159'];
 
 //tao ket noi den database 
@@ -25,10 +25,10 @@ var ShopAPI=require('./shop.api');
 
 //Router for account
 router.get('/account/findAll', AccountAPI.findAll);
-
+router.get('/account/findById/:id',AccountAPI.findById);
 router.post('/account/create',AccountAPI.create);
 router.delete('/account/delete/:id', AccountAPI.delete);
-router.put('/account/update/:id', AccountAPI.update);
+router.put('/account/update', AccountAPI.update);
 router.post('/account/login', AccountAPI.login);
 
 
@@ -53,14 +53,14 @@ router.get('/role/findAll', RoleAPI.findAll);
 
 router.post('/role/create', RoleAPI.create);
 router.delete('/role/delete/:id', RoleAPI.delete);
-router.put('/role/update/:id', RoleAPI.update);
+router.put('/role/update', RoleAPI.update);
 
 //Router for User
 router.get('/user/findAll', UserAPI.findAll);
 router.get('/user/find/:id', UserAPI.find);
 router.post('/user/create', UserAPI.create);
 router.delete('/user/delete/:id', UserAPI.delete);
-router.put('/user/update/', UserAPI.update);
+router.put('/user/update', UserAPI.update);
 router.post('/user/login', UserAPI.login);
 
 
@@ -71,7 +71,7 @@ router.get('/shop/findById/:id', ShopAPI.findById);
 router.get('/shop/findbyuser', ShopAPI.findbyuser);
 router.post('/shop/create', ShopAPI.create);
 router.delete('/shop/delete/:id', ShopAPI.delete);
-router.put('/shop/update/:id', ShopAPI.update);
+router.put('/shop/update', ShopAPI.update);
 
 
 

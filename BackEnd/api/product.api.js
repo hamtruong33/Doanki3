@@ -22,7 +22,7 @@ var ProductAPI={
 
     },
     findByShop: function(request,response){
-        Product.find({id_shop: request.params.id_shop},function(error,products){
+        Product.find().populate({path:'id_shop',math:{id_shop:request.params.id_shop}}).exec(function(error,products){
             if(error){
                 throw error;
                 
