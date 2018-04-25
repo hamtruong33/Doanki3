@@ -44,14 +44,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let shop of listshops">
+              <tr *ngFor="let shop of shops">
                 <td hidden>{{shop._id}}</td>
                 <td><a [routerLink]="['/shopdetail',{ id:shop._id }]">{{shop.shop_name}} </a></td>
                 <td>{{shop.shop_hotline}}</td>
                 <td>{{shop.shop_title}}</td>
-                <td>{{shop.id_user[0].user_lastname}}</td>
+                <td><a [routerLink]="['/userdetail',{ id:shop.id_user._id }]">{{shop.id_user.user_lastname}}</a></td>
                 <td>{{shop.shop_dateusing}}</td>
-                <td>{{shop.id_account[0].acc_lastname}}</td>
+                <td>{{shop.id_account.acc_lastname}}</td>
                 <td>{{shop.shop_active}}</td>
                
               </tr>

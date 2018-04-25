@@ -17,14 +17,6 @@ export class ListproductComponent implements OnInit {
     private elementRef: ElementRef
 
   ) {
-   
-  }
-
-  ngOnInit() {
-    this.loaddata();
-    
-  }
-  ngAfterViewInit() {
     $(function () {
       $('#example1').DataTable()
       $('#example2').DataTable({
@@ -36,11 +28,20 @@ export class ListproductComponent implements OnInit {
         'autoWidth': true
       })
     })
+   
+  }
+
+  ngOnInit() {
+    this.loaddata();
+    
+  }
+  ngAfterViewInit() {
+
   }
   loaddata() {
     this.productservice.findByShopName().subscribe(// khi xu ly xong ham subscribe cho biet se xu ly the nao 
       res => {//neu thanh cong 
-        this.listproduct = res;
+        this.products = res;
 
       },
       error => {// neu that bai

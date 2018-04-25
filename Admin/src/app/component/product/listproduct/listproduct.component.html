@@ -43,13 +43,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let pro of listproduct">
+              <tr *ngFor="let pro of products">
                 <td hidden>{{pro._id}}</td>
                 <td><a  [routerLink]="['/productdetail',{ id:pro._id }]">{{pro.product_name}} </a></td>
                 <td>{{pro.product_pricestock}}</td>
                 <td>{{pro.product_manufact}}</td>
-                <td>{{pro.id_shop[0].shop_name}}</td>
-                <td>{{pro.id_category[0].cate_name}}</td>
+                <td>{{pro.id_shop.shop_name}}</td>
+                <td>{{pro.id_category.cate_name}}</td>
                 <td><span class="label label-warning">{{pro.status}}</span></td>
                
                 <td>

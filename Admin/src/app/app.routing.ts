@@ -13,6 +13,8 @@ import { ListuserComponent } from './component/user/listuser/listuser.component'
 import { UserdetailComponent } from './component/user/userdetail/userdetail.component';
 import { ListorderComponent } from './component/order/listorder/listorder.component';
 import { LoginTemplateComponent } from './logintemplate.component';
+import { AccountdetailComponent } from './component/account/accountdetail/accountdetail.component';
+import { ListshopneedactiveComponent } from './component/shop/listshopneedactive/listshopneedactive.component';
 
 const routes: Routes = [
     {
@@ -31,6 +33,10 @@ const routes: Routes = [
                 { path: 'userdetail', component: UserdetailComponent },
                 { path: 'listorder', component: ListorderComponent },
                 { path: 'home', component: HomeComponent },
+                { path: 'accountdetail', component: AccountdetailComponent },
+                { path: 'verifyshop', component: ListshopneedactiveComponent }
+
+
             ]
     },
     {

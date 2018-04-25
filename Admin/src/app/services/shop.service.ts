@@ -70,10 +70,22 @@ export class ShopService {
         var body = JSON.stringify(shop);
         return this.http.put(this.BASE_URL+'update', body, options).map((res:Response)=>res.json());
     }
-    findbyuser(): Observable<ListShop[]> {
+    findbyuser(): Observable<Shop[]> {
         
         return this.http.get(this.BASE_URL + 'findbyuser/')
             .map((res: Response) => { // neu ham get tra ket qua kieu Response thi thuc hien hanh dong sau {}
+                return res.json();
+
+            })
+            .catch((err: any) => {
+                return Observable.throw(new Error(err.status));
+
+            });
+    }
+    verifyshop(): Observable<Shop[]> {
+        
+        return this.http.get(this.BASE_URL + 'verifyshop/')
+            .map((res: Response) => { 
                 return res.json();
 
             })

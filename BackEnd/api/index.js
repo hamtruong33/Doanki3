@@ -37,15 +37,17 @@ router.post('/account/login', AccountAPI.login);
 router.get('/product/findAll', ProductAPI.findAll);
 router.get('/product/findByStatus', ProductAPI.findByStatus);
 router.get('/product/findById/:id', ProductAPI.findById);
-router.get('/product/findByShop/:id_shop', ProductAPI.findByShop);
+router.get('/product/findByShop/:id', ProductAPI.findByShop);
+//router.get('/product/findByShopTest/:id',ProductAPI.findByShopTest);
 router.get('/product/findByShopName', ProductAPI.findByShopName);
 router.post('/product/create', ProductAPI.create);
 router.delete('/product/delete/:id', ProductAPI.delete);
 router.put('/product/update', ProductAPI.update);
+//router.get('/product/test',ProductAPI.test);
 
 //Router for productphoto
 router.get('/product/findByProduct/:id', ProductphotoAPI.findByProduct);
-
+router.get('/product/findByProductTest/',ProductphotoAPI.findByProductTest);
 
 
 //Router for Role
@@ -69,6 +71,7 @@ router.post('/user/login', UserAPI.login);
 router.get('/shop/findAll', ShopAPI.findAll);
 router.get('/shop/findById/:id', ShopAPI.findById);
 router.get('/shop/findbyuser', ShopAPI.findbyuser);
+router.get('/shop/verifyshop', ShopAPI.verifyshop);
 router.post('/shop/create', ShopAPI.create);
 router.delete('/shop/delete/:id', ShopAPI.delete);
 router.put('/shop/update', ShopAPI.update);

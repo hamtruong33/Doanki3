@@ -12,8 +12,8 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 export class UserdetailComponent implements OnInit {
   user: User;
   editfrom: FormGroup;
-  newuser:User;
-  isloaddata:Boolean =false;
+  newuser: User;
+  isloaddata: Boolean = false;
   constructor(
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
@@ -25,8 +25,9 @@ export class UserdetailComponent implements OnInit {
     let params: any = this.activatedRoute.snapshot.params;
     this.userService.findById(params.id).subscribe(
       res => {
+        //console.log(res);
         this.user = res;
-        this.isloaddata=true;
+        this.isloaddata = true;
         this.editfrom = this.formBuilder.group({
           user_lastname: [this.user.user_lastname],
           user_firstname: [this.user.user_firstname],
@@ -46,8 +47,8 @@ export class UserdetailComponent implements OnInit {
   }
   save(): void {
     console.log(this.editfrom.value);
-    this.newuser=this.editfrom.value;
-    this.newuser._id=this.user._id;
+    this.newuser = this.editfrom.value;
+    this.newuser._id = this.user._id;
     var result = confirm('Are u sure ?');
     if (result) {
       this.userService.update(this.newuser).subscribe(

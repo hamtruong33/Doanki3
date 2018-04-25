@@ -70,7 +70,7 @@ export class ProductService {
 
       });
   }
-  findByShopName(): Observable<ListProduct[]> {
+  findByShopName(): Observable<Product[]> {
     return this.http.get(this.BASE_URL + 'findByShopName')
       .map((res: Response) => { 
         return res.json();

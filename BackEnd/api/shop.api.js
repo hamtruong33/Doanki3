@@ -26,7 +26,18 @@ var ShopAPI={
             }else{
                 
                 res.status(200).json(shops);
-                //console.log(shop.id_user);
+                
+            }
+        });
+    },
+    verifyshop: function (req, res) {
+        Shop.find({ shop_active: false }).populate({path:'id_user',select:'user_lastname'}).populate('id_account','acc_lastname')
+        .exec(function(err,shops){  
+            if(err){throw err;
+            }else{
+                
+                res.status(200).json(shops);
+                
             }
         });
     },

@@ -46,7 +46,7 @@ export class ListshopComponent implements OnInit {
   loaddata() {
     this.shopservice.findbyuser().subscribe(// khi xu ly xong ham subscribe cho biet se xu ly the nao 
       res => {//neu thanh cong 
-        this.listshops=res;
+        this.shops=res;
        
 
       },

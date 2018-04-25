@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var ManufacturerSchema = new mongoose.Schema(
     {
-        manufa_name: [{type:String,require:true}],
+        manufa_name: {type:String,require:true},
         manufa_decription : String,         
         manufa_img_logo : String, 
         manufa_img_icon : String,

@@ -17,6 +17,13 @@ export class ListAccountComponent implements OnInit {
   constructor(
     private accountService: AccountService
   ) {
+ 
+   }
+
+  ngOnInit() {
+    this.loaddata();
+  }
+  ngAfterViewInit(){
     $(function () {
       $('#example1').DataTable()
       $('#example2').DataTable({
@@ -28,13 +35,6 @@ export class ListAccountComponent implements OnInit {
         'autoWidth'   : true
       })
     })
-   }
-
-  ngOnInit() {
-    this.loaddata();
-  }
-  ngAfterViewInit(){
-   
   }
   loaddata() {
     this.accountService.findAll().subscribe(// khi xu ly xong ham subscribe cho biet se xu ly the nao 

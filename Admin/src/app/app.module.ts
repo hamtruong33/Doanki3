@@ -31,8 +31,9 @@ import { ListorderComponent } from './component/order/listorder/listorder.compon
 import { AppComponent } from './app.component';
 import { LoginTemplateComponent } from './logintemplate.component';
 import { AddaccountComponent } from './component/account/addaccount/addaccount.component';
-import { AddshopComponent } from './component/shop/addshop/addshop.component';
 import { AddproductComponent } from './component/product/addproduct/addproduct.component';
+import { AccountdetailComponent } from './component/account/accountdetail/accountdetail.component';
+import { ListshopneedactiveComponent } from './component/shop/listshopneedactive/listshopneedactive.component';
 
 
 @NgModule({
@@ -51,8 +52,9 @@ import { AddproductComponent } from './component/product/addproduct/addproduct.c
     AppComponent,
     LoginTemplateComponent,
     AddaccountComponent,
-    AddshopComponent,
-    AddproductComponent
+    AddproductComponent,
+    AccountdetailComponent,
+    ListshopneedactiveComponent
 
   ],
   imports: [

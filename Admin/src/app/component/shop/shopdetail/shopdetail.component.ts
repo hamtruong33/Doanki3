@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../../services/shop.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Shop } from '../../../entities/shop.entity';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../entities/product.entity';
@@ -17,7 +17,8 @@ export class ShopdetailComponent implements OnInit {
   constructor(
     private shopservice: ShopService,
     private activatedRoute: ActivatedRoute,
-    private productservice: ProductService
+    private productservice: ProductService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -44,6 +45,66 @@ export class ShopdetailComponent implements OnInit {
       }
 
     );
+  }
+  ok(): void {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.shop.shop_active = true;
+      this.shop.id_account=localStorage.getItem('idaccount');
+      this.shopservice.update(this.shop).subscribe(
+        data => {
+          this.router.navigate(['list-shop']);
+        },
+        error => {
+          alert('Error');
+        }
+      );
+    }
+  }
+  unlock(): void {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.shop.status = true;
+     // this.shop.id_account=localStorage.getItem('idaccount');
+      this.shopservice.update(this.shop).subscribe(
+        data => {
+          this.router.navigate(['list-shop']);
+        },
+        error => {
+          alert('Error');
+        }
+      );
+    }
+  }
+  cancel(): void {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.shop.status = false;
+      this.shopservice.update(this.shop).subscribe(
+        data => {
+          this.router.navigate(['list-shop']);
+        },
+        error => {
+          alert('Error');
+        }
+      );
+    }
+  }
+  delete(id: string) {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.shopservice.delete(id).subscribe(
+        res => {
+          alert('success');
+          this.router.navigate(['list-shop']);
+        },
+        error => {
+          alert('Error');
+        }
+      );
+
+    }
+
   }
 
 }

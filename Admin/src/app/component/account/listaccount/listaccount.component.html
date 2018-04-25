@@ -32,13 +32,13 @@
             <thead>
               <tr>
                 <th hidden>Id</th>
-                <th>UserName</th>
+                <th>Email</th>
                 <th>Password</th>
                 <th>FullName</th>
                 <th>Status</th>
-                <th>Email</th>
+                <th>Photo</th>
                 <th>Phone</th>
-                <th>Role</th>
+                <th>Date Create</th>
                 <th>Option</th>
 
               </tr>
@@ -46,17 +46,17 @@
             <tbody>
               <tr *ngFor="let acc of accounts">
                 <td hidden>{{acc._id}}</td>
-                <td><a [routerLink]="['/accountdetail',{ id:acc._id }]">{{acc.username}} </a></td>
-                <td>{{acc.password}}</td>
-                <td>{{acc.fullName}}</td>
-                <td>{{acc.status}}</td>
-                <td>{{acc.email}}</td>
-                <td>{{acc.phone}}</td>
-                <td>{{acc.roleId}}</td>
+                <td><a [routerLink]="['/accountdetail',{ id:acc._id }]">{{acc.acc_email}} </a></td>
+                <td>{{acc.acc_password}}</td>
+                <td>{{acc.acc_firstname}} {{acc.acc_lastname}}</td>
+                <td><span class="label label-warning">{{acc.status}}</span></td>
+                <td><img height="50" width="50" src="../../../../assets/images/{{acc.acc_photo}}"></td>
+                <td>{{acc.acc_phone}}</td>
+                <td>{{acc.acc_create}}</td>
                 <td>
                   <input type="button"(click)="delete(acc._id)" value="Delete">
                   <br>
-                  <input type="button"(click)="edit(acc._id)" value="Edit">
+                 
                 </td>
               </tr>
               
@@ -64,13 +64,13 @@
             <tfoot>
               <tr>
                   <th hidden>Id</th>
-                  <th>UserName</th>
+                  <th>Email</th>
                   <th>Password</th>
                   <th>FullName</th>
                   <th>Status</th>
-                  <th>Email</th>
+                  <th>Photo</th>
                   <th>Phone</th>
-                  <th>Role</th>
+                  <th>Date Create</th>
                   <th>Option</th>
 
               </tr>
