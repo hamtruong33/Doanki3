@@ -37,19 +37,7 @@ export class ProductdetailComponent implements OnInit {
             console.log(error);
           }
         );
-        this.shopservice.findById(this.product.id_shop).subscribe(
-          res => {
-            this.shop = res;
-            if(this.shop.status){
-              this.shopstatus="Dang hoat dong";
-            }else{
-              this.shopstatus="Dang bi khoa";
-            }
-          },
-          error => {
-            console.log(error);
-          }
-        );
+    
 
       },
       error => {
@@ -58,19 +46,63 @@ export class ProductdetailComponent implements OnInit {
     );
 
   }
+  
   ok():void{
     this.product.status=true;
     this.productservice.update(this.product).subscribe(
       data => {
-        this.router.navigate(['checknewproduct']);
+        this.router.navigate(['verifyproduct']);
       },
       error => {
           alert('Error');
       }
     );
   }
-  cancel():void{
-    this.router.navigate(['checknewproduct']);
+  cancel(): void {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.product.status = false;
+      this.productservice.update(this.product).subscribe(
+        data => {
+          this.router.navigate(['verifyproduct']);
+        },
+        error => {
+          alert('Error');
+        }
+      );
+    }
   }
+  delete(id: string) {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.productservice.delete(id).subscribe(
+        res => {
+          alert('success');
+          this.router.navigate(['verifyproduct']);
+        },
+        error => {
+          alert('Error');
+        }
+      );
+
+    }
+
+  }
+  unlock(): void {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.product.status = true;
+     // this.shop.id_account=localStorage.getItem('idaccount');
+      this.productservice.update(this.product).subscribe(
+        data => {
+          this.router.navigate(['verifyproduct']);
+        },
+        error => {
+          alert('Error');
+        }
+      );
+    }
+  }
+
 
 }

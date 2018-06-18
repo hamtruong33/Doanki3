@@ -1,0 +1,82 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    New Product Need Verify
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="#">
+        <i class="fa fa-dashboard"></i> Home</a>
+    </li>
+    <li>
+      <a href="#">Product</a>
+    </li>
+    <li class="active">Verify Product</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title"></h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th hidden>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shop</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Option</th>
+
+              </tr>
+            </thead>
+            <tbody *ngIf="products!=null">
+              <tr *ngFor="let pro of products">
+                <td hidden>{{pro._id}}</td>
+                <td><a  [routerLink]="['/productdetail',{ id:pro._id }]">{{pro.product_name}} </a></td>
+                <td>{{pro.product_pricestock}}</td>
+                <td>{{pro.id_shop.shop_name}}</td>
+                <td>{{pro.id_category.cate_name}}</td>
+                <td><span class="label label-warning">{{pro.status}}</span></td>
+               
+                <td>
+                  <input type="button"(click)="delete(pro._id)" value="Delete">
+                  <br>
+                </td>
+              </tr>
+              
+            </tbody>
+            <tfoot>
+              <tr>
+                <th hidden>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shop</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Option</th>
+
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

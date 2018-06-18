@@ -48,28 +48,30 @@ var ProductAPI = {
             {
                 "$match": { "id_shop": request.params.id }
             },
-           
-          
+
+
         ]).exec(function (err, result) {
             if (err) {
                 throw err;
             } else {
-               Product.populate(result,{path:"id_category" ,select:"cate_name"},function(err,data)
-               {
-                if (err) {
-                    throw err;
-                } else {
-                    // console.log(result);
-                    response.status(200).json(data);
-                }
-               })
-               
+                Product.populate(result, { path: "id_category", select: "cate_name" }, function (err, data) {
+                    if (err) {
+                        throw err;
+                    } else {
+                        // console.log(result);
+                        response.status(200).json(data);
+                    }
+                })
+
             }
         });
 
     },
     findByShopName: function (request, response) {
-        Product.find().populate('id_shop', 'shop_name').populate('id_category', 'cate_name')
+        Product.find()
+        .populate('id_shop', 'shop_name')
+        .populate('id_category', 'cate_name')
+   //     .populate('product_manufact','manufa_name')
             .exec(function (err, products) {
                 if (err) {
                     throw err;
@@ -101,13 +103,18 @@ var ProductAPI = {
         });
     },
     findByStatus: function (req, res) {
-        Product.find({ status: false }, function (error, products) {
-            if (error) {
-                throw error;
-            } else {
-                res.status(200).json(products);
-            }
-        });
+        Product.find({ status: false }).
+        populate('id_shop', 'shop_name').
+        populate('id_category', 'cate_name')
+   //     .populate('product_manufact','manufa_name')
+            .exec(function (err, products) {
+                if (err) {
+                    throw err;
+                } else {
+
+                    res.status(200).json(products);
+                }
+            });
     },
 
 
@@ -123,10 +130,10 @@ var ProductAPI = {
             product_datecreate: request.body.product_datecreate,
             product_quickken: request.body.product_quickken,
             product_description: request.body.product_description,
-            status: request.body.status,
-            status_sale: request.body.status_sale,
-            status_new: request.body.status_new,
-            id_account: request.body.id_account
+            status: false,
+            status_sale: false,
+            status_new: false,
+         //   id_account: request.body.id_account
 
         });
         newProduct.save(function (error) {
@@ -175,6 +182,14 @@ var ProductAPI = {
 
         });
     },
+    count:function(req,res){
+        Product.count(function(err,count){
+            if (err) { throw err; }
+            else{
+                res.status(200).json(count);
+            }
+        });
+    }
 
 };
 module.exports = ProductAPI;

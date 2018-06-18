@@ -17,6 +17,15 @@ export class ListproductComponent implements OnInit {
     private elementRef: ElementRef
 
   ) {
+ 
+   
+  }
+
+  ngOnInit() {
+    this.loaddata();
+    
+  }
+  ngAfterViewInit() {
     $(function () {
       $('#example1').DataTable()
       $('#example2').DataTable({
@@ -28,15 +37,6 @@ export class ListproductComponent implements OnInit {
         'autoWidth': true
       })
     })
-   
-  }
-
-  ngOnInit() {
-    this.loaddata();
-    
-  }
-  ngAfterViewInit() {
-
   }
   loaddata() {
     this.productservice.findByShopName().subscribe(// khi xu ly xong ham subscribe cho biet se xu ly the nao 
@@ -48,6 +48,22 @@ export class ListproductComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  delete(id: string) {
+    var result = confirm('Are u sure ?');
+    if (result) {
+      this.productservice.delete(id).subscribe(
+        res => {
+          alert('success');
+          this.loaddata();
+        },
+        error => {
+          alert('Error');
+        }
+      );
+
+    }
+
   }
 
 }

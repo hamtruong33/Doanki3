@@ -1,8 +1,8 @@
-<form role="form" [formGroup]="editfrom" (ngSubmit)="save()" >
+<form role="form" [formGroup]="editfrom" (ngSubmit)="save($event)"  >
   <div class="col-md-6">
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Add New Account</h3>
+        <h3 class="box-title">Add New  Account</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->
@@ -11,23 +11,63 @@
 
         <div class="form-group">
           <label for="exampleInputEmail1">Last Name</label>
-          <input type="text" class="form-control" formControlName="acc_lastname">
+          <input type="text" class="form-control" formControlName="acc_lastname" required>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">First Name</label>
-          <input type="text" class="form-control" formControlName="acc_firstname">
+          <input type="text" class="form-control" formControlName="acc_firstname" required>
         </div>
 
 
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" formControlName="acc_email">
+          <input type="email" class="form-control" formControlName="acc_email" required>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Password</label>
-          <input type="password" class="form-control" formControlName="acc_password">
+          <input type="password" class="form-control" formControlName="acc_password" required>
         </div>
 
+
+
+
+      </div>
+      <!-- /.box-body -->
+
+
+
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box box-primary">
+      
+
+      <div class="box-body">
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Phone</label>
+          <input type="text" class="form-control" formControlName="acc_phone" required>
+        </div>
+        <img height="50" width="50" src="">
+        <div class="form-group">
+          <label for="exampleInputFile">Image</label>
+          <input type="file" id="exampleInputFile" (change)="onFileChanged($event)">
+
+          <p class="help-block">Choose your Image</p>
+        </div>
+       
+
+     
+        <div class="form-group">
+          <label>Role</label>
+          <select class="form-control" formControlName="role"  required>
+            <option value="5acd0aaf356e91022ac26159">SUPERADMIN</option>
+            <option value="5acd0aaf356e91022ac26157">ADMIN</option>
+          </select>
+        </div>
+        <div class="box-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
 
 
 

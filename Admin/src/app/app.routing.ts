@@ -15,6 +15,8 @@ import { ListorderComponent } from './component/order/listorder/listorder.compon
 import { LoginTemplateComponent } from './logintemplate.component';
 import { AccountdetailComponent } from './component/account/accountdetail/accountdetail.component';
 import { ListshopneedactiveComponent } from './component/shop/listshopneedactive/listshopneedactive.component';
+import { AddaccountComponent } from './component/account/addaccount/addaccount.component';
+import { VerifyproductComponent } from './component/product/verifyproduct/verifyproduct.component';
 
 const routes: Routes = [
     {
@@ -34,7 +36,9 @@ const routes: Routes = [
                 { path: 'listorder', component: ListorderComponent },
                 { path: 'home', component: HomeComponent },
                 { path: 'accountdetail', component: AccountdetailComponent },
-                { path: 'verifyshop', component: ListshopneedactiveComponent }
+                { path: 'verifyshop', component: ListshopneedactiveComponent },
+                { path: 'addaccount', component: AddaccountComponent },
+                { path: 'verifyproduct', component: VerifyproductComponent }
 
 
             ]

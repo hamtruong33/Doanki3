@@ -81,6 +81,21 @@ export class ProductService {
 
       });
   }
+  delete(id: string) {
+    return this.http.delete(this.BASE_URL + 'delete/' + id)
+        .map((res: Response) => res.json());
+}
+  count(){
+    return this.http.get(this.BASE_URL + 'count')
+    .map((res: Response) => {
+        return res.json();
+
+    })
+    .catch((err: any) => {
+        return Observable.throw(new Error(err.status));
+
+    });
+}
   
 
 }

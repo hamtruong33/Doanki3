@@ -22,15 +22,16 @@ var AccountAPI={
         });
     },
     create:function(request,response){
+        console.log(request.file);
         var newAccount = new Account({            
             acc_firstname: request.body.acc_firstname,
             acc_lastname: request.body.acc_lastname,
             acc_email: request.body.acc_email,
             acc_password: request.body.acc_password,        
             acc_phone: request.body.acc_phone,
-            acc_photo: request.body.acc_photo,
+            acc_photo: request.file.path,
             acc_create: request.body.acc_create,
-            status:request.body.status,
+            status:true,
             role:request.body.role 
         });
         newAccount.save(function(error){

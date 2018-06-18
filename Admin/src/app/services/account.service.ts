@@ -45,15 +45,22 @@ export class AccountService {
 
             });
     }
-    create(account: Account) {
-        var headers = new Headers({
-            'Content-Type': 'application/json'
-        });
-        var options = new RequestOptions({
-            headers: headers // headers dung truoc la key  , headers dung sau la value
-        });
-        var body = JSON.stringify(account);
-        return this.http.post(this.BASE_URL + 'create', body, options)
+    create(account: Account, file: File) {
+        // var headers = new Headers({
+        //     'Content-Type': 'application/json'
+        // });
+        // var options = new RequestOptions({
+        //     headers: headers // headers dung truoc la key  , headers dung sau la value
+        // });
+        var body = new FormData();
+        body.append('acc_firstname', account.acc_firstname);
+        body.append('acc_lastname', account.acc_lastname);
+        body.append('acc_email', account.acc_email);
+        body.append('acc_password', account.acc_password);
+        body.append('acc_phone', account.acc_phone);
+        body.append('role', account.role);
+        body.append('acc_photo', file, file.name);
+        return this.http.post(this.BASE_URL + 'create', body)
             .map((res: Response) => res.json());
     }
     delete(id: string) {
@@ -61,8 +68,10 @@ export class AccountService {
             .map((res: Response) => res.json());
     }
     update(account: Account) {
+
         var headers = new Headers({
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'x-access-token': localStorage.getItem('auth_token')
         });
         var options = new RequestOptions({
             headers: headers

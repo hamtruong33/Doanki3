@@ -111,6 +111,14 @@ var ShopAPI={
             }
 
         });
+    },
+    count:function(req,res){
+        Shop.count(function(err,count){
+            if (err) { throw err; }
+            else{
+                res.status(200).json(count);
+            }
+        });
     }
     
 

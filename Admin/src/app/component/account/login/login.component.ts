@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
             this.errorMsg = '';
             localStorage.setItem('idaccount', res.data.data.id);
             localStorage.setItem('auth_token', res.data.token);
+            localStorage.setItem('role',res.data.data.role);
             this.router.navigate(['']);
           } else {
             this.errorMsg = 'Invalid Account';

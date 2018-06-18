@@ -34,6 +34,7 @@ import { AddaccountComponent } from './component/account/addaccount/addaccount.c
 import { AddproductComponent } from './component/product/addproduct/addproduct.component';
 import { AccountdetailComponent } from './component/account/accountdetail/accountdetail.component';
 import { ListshopneedactiveComponent } from './component/shop/listshopneedactive/listshopneedactive.component';
+import { VerifyproductComponent } from './component/product/verifyproduct/verifyproduct.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { ListshopneedactiveComponent } from './component/shop/listshopneedactive
     AddaccountComponent,
     AddproductComponent,
     AccountdetailComponent,
-    ListshopneedactiveComponent
+    ListshopneedactiveComponent,
+    VerifyproductComponent
 
   ],
   imports: [

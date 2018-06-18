@@ -94,6 +94,17 @@ export class ShopService {
 
             });
     }
+    count(){
+        return this.http.get(this.BASE_URL + 'count')
+        .map((res: Response) => {
+            return res.json();
+
+        })
+        .catch((err: any) => {
+            return Observable.throw(new Error(err.status));
+
+        });
+    }
     
 
 

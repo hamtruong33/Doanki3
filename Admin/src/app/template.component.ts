@@ -13,11 +13,18 @@ export class TemplateComponent implements OnInit {
     account :Account;
     id:string;
     loaded :boolean =false;
+    role:boolean = false;
     constructor(
         private accountservice: AccountService
     ) { }
     ngOnInit() { 
-        console.log(localStorage.getItem('idaccount'));
+        if(localStorage.getItem('role')==='5acd0aaf356e91022ac26159'){
+            this.role=true;
+        }
+        if(localStorage.getItem('role')==='5acd0aaf356e91022ac26157'){
+            this.role=false;
+        }
+       // console.log(localStorage.getItem('idaccount'));
         this.id=localStorage.getItem('idaccount');
         this.accountservice.findById(this.id).subscribe(
             res=>{

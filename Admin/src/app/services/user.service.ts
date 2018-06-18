@@ -18,7 +18,7 @@ export class UserService {
     ) { }
     findAll(): Observable<User[]> {
         return this.http.get(this.BASE_URL + 'findAll')
-            .map((res: Response) => { 
+            .map((res: Response) => {
                 return res.json();
 
             })
@@ -33,7 +33,7 @@ export class UserService {
     }
     findById(id): Observable<User> {
         return this.http.get(this.BASE_URL + 'find/' + id)
-            .map((res: Response) => { 
+            .map((res: Response) => {
                 return res.json();
 
             })
@@ -44,12 +44,23 @@ export class UserService {
     }
     update(user: User) {
         var headers = new Headers({
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         });
         var options = new RequestOptions({
-          headers: headers
+            headers: headers
         });
         var body = JSON.stringify(user);
         return this.http.put(this.BASE_URL + 'update', body, options).map((res: Response) => res.json());
-      }
+    }
+    count(){
+        return this.http.get(this.BASE_URL + 'count')
+        .map((res: Response) => {
+            return res.json();
+
+        })
+        .catch((err: any) => {
+            return Observable.throw(new Error(err.status));
+
+        });
+    }
 }

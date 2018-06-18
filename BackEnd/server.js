@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+
+app.use('/uploads', express.static('uploads'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -21,3 +24,6 @@ app.all('/*', function(req, res, next) {
 app.use('/api', require('./api/index'));
     
 app.listen(9999,'localhost');
+
+
+module.exports=app;

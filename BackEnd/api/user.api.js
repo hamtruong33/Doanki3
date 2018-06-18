@@ -57,9 +57,9 @@ var UserAPI = {
                 user_birthday:request.body.user_birthday,
                 user_create:request.body.user_create,
                 user_address:request.body.user_address,
-                user_shopactive:request.body.user_shopactive,
-                status:request.body.status,
-                rip_account:request.body.rip_account
+               // user_shopactive:request.body.user_shopactive,
+                status:true,
+                rip_account:false
             },
             function (error, result) {
                 if (error) {
@@ -110,6 +110,14 @@ var UserAPI = {
                 var token = jwt.sign( { id: user._id}, config.secret, { expiresIn: 86400 });
 
                 res.status(200).send({ auth: true, token: token ,id: user._id});
+            }
+        });
+    },
+    count:function(req,res){
+        User.count(function(err,count){
+            if (err) { throw err; }
+            else{
+                res.status(200).json(count);
             }
         });
     }

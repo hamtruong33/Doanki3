@@ -34,7 +34,6 @@
                 <th hidden>Id</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>ManuFact</th>
                 <th>Shop</th>
                 <th>Category</th>
                 <th>Status</th>
@@ -47,7 +46,6 @@
                 <td hidden>{{pro._id}}</td>
                 <td><a  [routerLink]="['/productdetail',{ id:pro._id }]">{{pro.product_name}} </a></td>
                 <td>{{pro.product_pricestock}}</td>
-                <td>{{pro.product_manufact}}</td>
                 <td>{{pro.id_shop.shop_name}}</td>
                 <td>{{pro.id_category.cate_name}}</td>
                 <td><span class="label label-warning">{{pro.status}}</span></td>
@@ -55,7 +53,6 @@
                 <td>
                   <input type="button"(click)="delete(pro._id)" value="Delete">
                   <br>
-                  <input type="button"(click)="edit(pro._id)" value="Edit">
                 </td>
               </tr>
               
@@ -65,7 +62,6 @@
                 <th hidden>Id</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>ManuFact</th>
                 <th>Shop</th>
                 <th>Category</th>
                 <th>Status</th>

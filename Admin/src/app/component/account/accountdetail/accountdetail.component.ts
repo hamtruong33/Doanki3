@@ -33,7 +33,7 @@ export class AccountdetailComponent implements OnInit {
           acc_email: [this.account.acc_email,[Validators.required]],
           acc_password: this.account.acc_password,
           acc_phone: this.account.acc_phone,
-         // acc_photo : this.account.acc_photo,
+          acc_photo : this.account.acc_photo,
           status: this.account.status,
           role:this.account.role
         });
@@ -50,7 +50,7 @@ export class AccountdetailComponent implements OnInit {
        if (result) {
          this.accountservice.update(this.accountnew).subscribe(
            data => {
-             this.router.navigate(['listuser']);
+             this.router.navigate(['list-account']);
    
            },
            error => {
